@@ -4,6 +4,8 @@ Corporate website for TexGrade GmbH & Co. KG, built with Next.js and prepared fo
 
 The site is available in German and English. German is served from the main routes, while the English version starts at `/en`. The language switch keeps visitors on the corresponding page.
 
+Production deployments are protected with HTTP Basic Authentication. Set the runtime secrets `PREVIEW_USERNAME` and `PREVIEW_PASSWORD` before starting the Fly.io application. Without both values, production returns a closed `503` response.
+
 ## Local development
 
 ```bash
