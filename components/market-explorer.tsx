@@ -20,6 +20,14 @@ const marketCopy = {
       { id: "asia", label: "Asia", eyebrow: "International markets", text: "TexGrade also prepares sorted textiles in clearly defined categories for business partners in Asia.", detail: "Defined sorting · transparent article structure · reliable handling" },
     ],
   },
+  fr: {
+    label: "Marchés de vente",
+    markets: [
+      { id: "europe", label: "Europe", eyebrow: "Marchés européens", text: "En Europe, TexGrade fournit des textiles de seconde main triés conformément aux exigences convenues en matière d’articles et de qualité.", detail: "Sélection adaptée au marché · catégories convenues · logistique coordonnée" },
+      { id: "africa", label: "Afrique", eyebrow: "Marchés internationaux", text: "Pour les marchés africains, nous préparons des assortiments par article et par saison selon les exigences des clients.", detail: "Catégories spécifiques · assortiments saisonniers · conditionnement pour l’export" },
+      { id: "asia", label: "Asie", eyebrow: "Marchés internationaux", text: "TexGrade prépare également des textiles triés dans des catégories clairement définies pour ses partenaires commerciaux en Asie.", detail: "Tri défini · structure d’articles transparente · traitement fiable" },
+    ],
+  },
 } as const;
 
 type Market = {

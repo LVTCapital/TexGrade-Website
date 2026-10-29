@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     default: "TexGrade GmbH & Co. KG | Textile sorting for international markets",
     template: "%s | TexGrade",
   },
-  description: "TexGrade processes regionally collected used textiles, sorts them into defined article categories and directs them to reuse or recycling.",
+  description: "TexGrade carefully sorts regionally collected used textiles and prepares them for reuse in international textile markets.",
 };
 
 export default function EnglishRootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

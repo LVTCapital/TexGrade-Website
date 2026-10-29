@@ -1,77 +1,132 @@
-import Image from "next/image";
 import Link from "next/link";
 import { HeroVisual } from "@/components/hero-visual";
 import { Icon } from "@/components/icon";
-import { MarketExplorer } from "@/components/market-explorer";
 import type { Locale } from "@/lib/i18n";
 import { siteRoutes } from "@/lib/i18n";
 
 const content = {
-  de: {
-    heroEyebrow: "Textile sorting · International trade",
-    heroTitle: "Textilien klar sortiert. Für Märkte weltweit.",
-    heroText: "TexGrade verarbeitet regional erfasste Altkleider, sortiert sie in definierte Artikelkategorien und stellt bedarfsgerechte Sortimente für internationale Märkte zusammen.",
-    servicesButton: "Leistungen ansehen",
-    contactLink: "Kontakt aufnehmen",
-    factsLabel: "TexGrade Schwerpunkte",
-    facts: [["7,5+ Mio. kg", "Sortiermenge pro Jahr"], ["30+ Jahre", "Erfahrung im Markt"], ["3 Kontinente", "Europa, Afrika und Asien"]],
-    serviceEyebrow: "Vom Textilstrom zum Sortiment",
-    serviceTitle: "Eine klare Struktur für jede Bestellung.",
-    serviceIntro: "Wir machen aus regional erfassten Gebrauchttextilien nachvollziehbare, handelbare Produktgruppen.",
-    services: [
-      { icon: "sort" as const, title: "Artikelgenaue Sortierung", text: "Gebrauchtkleidung wird in klar definierte Artikelkategorien aufgeteilt." },
-      { icon: "grade" as const, title: "Kundenspezifisches Grading", text: "Qualität, Saison und Zusammenstellung richten sich nach vereinbarten Anforderungen." },
-      { icon: "pack" as const, title: "Exportgerechte Verpackung", text: "Sortierte Ware wird strukturiert für Transport und Weiterverkauf vorbereitet." },
-    ],
-    processLink: "Den gesamten Ablauf kennenlernen",
-    marketsEyebrow: "International ausgerichtet",
-    marketsTitle: "Von Europa über Afrika bis nach Asien.",
-    marketsIntro: "Klicke auf einen Markt, um zu sehen, wie TexGrade die Sortierung darauf ausrichtet.",
-    storageAlt: "Lager mit vorsortierten Textilien in Transportbehältern",
-    principleEyebrow: "Unser Grundsatz",
-    principleTitle: "Sortierung beginnt mit dem Zielmarkt.",
-    principleText: "Nicht jeder Markt benötigt dieselbe Zusammenstellung. Deshalb arbeitet TexGrade auf Basis klarer Artikel-, Qualitäts- und Saisonvorgaben.",
-    checks: ["Kategorien nach Kundenanforderung", "Transparente Abstimmung vor Produktionsbeginn", "Koordinierte Vorbereitung für den internationalen Versand"],
-    companyLink: "TexGrade kennenlernen",
-    cycleEyebrow: "Textilien im Kreislauf",
-    cycleTitle: "Wiederverwenden, wo es möglich ist. Recyceln, wo es notwendig ist.",
-    cycleText: ["Mehr als 7.500.000 Kilogramm Altkleider werden von TexGrade jedes Jahr verarbeitet und sortiert. Wiederverwendbare Kleidung wird für internationale Absatzmärkte vorbereitet.", "Textilien, die nicht mehr für eine Wiederverwendung geeignet sind, geben wir an spezialisierte Recyclingpartner weiter, damit auch diese Materialien sinnvoll weiterverarbeitet werden können."],
-    ctaEyebrow: "Für Kunden und Lieferanten",
-    ctaTitle: "Sie möchten Ware beziehen oder Altkleider anliefern?",
-    ctaButton: "Gespräch starten",
-  },
   en: {
     heroEyebrow: "Textile sorting · International trade",
-    heroTitle: "Clearly sorted textiles. For markets worldwide.",
-    heroText: "TexGrade processes regionally collected used textiles, sorts them into defined article categories and prepares tailored assortments for international markets.",
+    heroTitle: "Sorting textiles. Preserving value. Extending lifecycles.",
+    heroText: "TexGrade carefully sorts regionally collected used textiles and prepares them for reuse in international textile markets.",
     servicesButton: "View our services",
     contactLink: "Contact us",
     factsLabel: "TexGrade at a glance",
-    facts: [["7.5+ million kg", "Sorting volume per year"], ["30+ years", "Market experience"], ["3 continents", "Europe, Africa and Asia"]],
-    serviceEyebrow: "From textile stream to assortment",
-    serviceTitle: "A clear structure for every order.",
-    serviceIntro: "We turn regionally collected used textiles into transparent, marketable product groups.",
-    services: [
-      { icon: "sort" as const, title: "Article-specific sorting", text: "Used clothing is separated into clearly defined article categories." },
-      { icon: "grade" as const, title: "Customer-specific grading", text: "Quality, season and composition are aligned with agreed requirements." },
-      { icon: "pack" as const, title: "Export-ready packaging", text: "Sorted goods are prepared systematically for transport and resale." },
+    facts: [["7.5+ million kg", "Textiles sorted every year"], ["30+ years", "Experience in the market"], ["3 regions", "Europe, Africa and Asia"]],
+    audienceEyebrow: "For suppliers and buyers",
+    audienceTitle: "Two requirements. One direct point of contact.",
+    audienceIntro: "Whether you want to supply collected textiles or purchase finished assortments, we discuss your requirements directly and personally.",
+    audiences: [
+      { icon: "truck" as const, label: "For collectors and suppliers", title: "Offer unsorted textiles", text: "Do you collect used textiles and need a reliable buyer? TexGrade is your direct point of contact and can connect you with collection networks where required.", button: "Offer textiles" },
+      { icon: "pack" as const, label: "For traders and buyers", title: "Source sorted goods", text: "Do you need sorted textiles aligned with quality, season and target market? We prepare suitable assortments for international customers.", button: "Enquire about sorted goods" },
     ],
-    processLink: "Explore the complete process",
-    marketsEyebrow: "Internationally focused",
-    marketsTitle: "From Europe to Africa and Asia.",
-    marketsIntro: "Select a market to see how TexGrade aligns its sorting process with local requirements.",
-    storageAlt: "Storage area with pre-sorted textiles in transport containers",
-    principleEyebrow: "Our principle",
-    principleTitle: "Sorting starts with the target market.",
-    principleText: "Every market requires a different composition. TexGrade therefore works with clearly defined article, quality and seasonal specifications.",
-    checks: ["Categories based on customer requirements", "Transparent coordination before production begins", "Coordinated preparation for international shipping"],
-    companyLink: "Discover TexGrade",
-    cycleEyebrow: "Keeping textiles in circulation",
-    cycleTitle: "Reuse wherever possible. Recycle wherever necessary.",
-    cycleText: ["TexGrade processes and sorts more than 7,500,000 kilograms of used textiles every year. Reusable clothing is prepared for international sales markets.", "Textiles that are no longer suitable for reuse are passed on to specialised recycling partners so that these materials can also be put to productive use."],
-    ctaEyebrow: "For customers and suppliers",
-    ctaTitle: "Would you like to purchase sorted goods or supply used textiles?",
-    ctaButton: "Start a conversation",
+    missionEyebrow: "Our mission",
+    missionTitle: "Keeping as many textiles in circulation as possible.",
+    missionText: "Our aim is to extend the useful life of textiles through careful manual sorting. Reusable clothing returns to the goods cycle; textiles that are no longer suitable for reuse are passed on for material recycling.",
+    missionStatement: "Reuse wherever possible. Recycle wherever necessary.",
+    flowEyebrow: "The textile flow",
+    flowTitle: "From collection to a new use.",
+    flowIntro: "A transparent process turns mixed textile streams into clearly defined goods and directs each material to the most suitable next stage.",
+    flowLabel: "TexGrade textile flow",
+    flowSteps: [
+      { icon: "collect" as const, title: "Donation & collection", text: "Used clothing enters established collection systems." },
+      { icon: "truck" as const, title: "Regional collection", text: "Collectors gather and consolidate the textiles." },
+      { icon: "sort" as const, title: "Manual sorting", text: "Experienced TexGrade teams assess every item by article, quality and season." },
+      { icon: "grade" as const, title: "Customer specification", text: "Reusable goods are grouped for the relevant market and order." },
+      { icon: "pack" as const, title: "Packing", text: "Finished assortments are prepared for onward transport." },
+    ],
+    outcomesLabel: "The next stage",
+    outcomes: [
+      { icon: "reuse" as const, title: "Back into circulation", text: "Reusable clothing is prepared for international textile markets." },
+      { icon: "recycle" as const, title: "Material recycling", text: "Non-reusable textiles are passed on for further recycling and material recovery." },
+    ],
+    contactEyebrow: "Direct contact",
+    contactTitle: "Would you like to supply textiles or purchase sorted goods?",
+    contactText: "Speak directly with Reinhold Thate about volumes, specifications and the next steps.",
+    callButton: "Call now",
+    contactButton: "Contact details",
+  },
+  de: {
+    heroEyebrow: "Textilsortierung · Internationaler Handel",
+    heroTitle: "Textilien sortieren. Werte erhalten. Lebenszyklen verlängern.",
+    heroText: "TexGrade sortiert regional erfasste Alttextilien sorgfältig und bereitet sie für die Wiederverwendung auf internationalen Textilmärkten vor.",
+    servicesButton: "Leistungen ansehen",
+    contactLink: "Kontakt aufnehmen",
+    factsLabel: "TexGrade auf einen Blick",
+    facts: [["7,5+ Mio. kg", "Sortierte Textilien pro Jahr"], ["30+ Jahre", "Erfahrung im Markt"], ["3 Regionen", "Europa, Afrika und Asien"]],
+    audienceEyebrow: "Für Lieferanten und Abnehmer",
+    audienceTitle: "Zwei Anforderungen. Ein direkter Ansprechpartner.",
+    audienceIntro: "Ob Sie erfasste Alttextilien anbieten oder fertige Sortimente beziehen möchten: Wir stimmen die Anforderungen direkt und persönlich mit Ihnen ab.",
+    audiences: [
+      { icon: "truck" as const, label: "Für Sammler und Lieferanten", title: "Rohware anbieten", text: "Sie sammeln Alttextilien und suchen einen zuverlässigen Abnehmer? TexGrade ist Ihr direkter Ansprechpartner und vermittelt bei Bedarf Kontakte innerhalb des Sammlernetzwerks.", button: "Rohware anbieten" },
+      { icon: "pack" as const, label: "Für Händler und Abnehmer", title: "Sortierte Ware beziehen", text: "Sie suchen sortierte Textilien nach Qualität, Saison und Absatzmarkt? Wir stellen passende Sortimente für unsere internationalen Kunden bereit.", button: "Sortierte Ware anfragen" },
+    ],
+    missionEyebrow: "Unsere Mission",
+    missionTitle: "So viele Textilien wie möglich im Kreislauf halten.",
+    missionText: "Unser Ziel ist es, den Lebenszyklus von Textilien durch sorgfältige Handsortierung zu verlängern. Wiederverwendbare Kleidung gelangt zurück in den Warenkreislauf; nicht wiederverwendbare Textilien geben wir zur stofflichen Verwertung weiter.",
+    missionStatement: "Wiederverwenden, wo es möglich ist. Recyceln, wo es notwendig ist.",
+    flowEyebrow: "Der Textilstrom",
+    flowTitle: "Von der Sammlung zur neuen Nutzung.",
+    flowIntro: "Ein transparenter Prozess macht aus gemischten Textilströmen klar definierte Waren und führt jedes Material dem passenden nächsten Weg zu.",
+    flowLabel: "TexGrade Textilstrom",
+    flowSteps: [
+      { icon: "collect" as const, title: "Abgabe & Sammlung", text: "Nicht mehr benötigte Kleidung gelangt in etablierte Sammelsysteme." },
+      { icon: "truck" as const, title: "Regionale Erfassung", text: "Sammler erfassen und bündeln die Textilien." },
+      { icon: "sort" as const, title: "Manuelle Sortierung", text: "Erfahrene TexGrade-Teams prüfen jedes Stück nach Artikel, Qualität und Saison." },
+      { icon: "grade" as const, title: "Kundenspezifikation", text: "Wiederverwendbare Ware wird passend zu Markt und Auftrag zusammengestellt." },
+      { icon: "pack" as const, title: "Verpackung", text: "Die fertigen Sortimente werden für den Weitertransport vorbereitet." },
+    ],
+    outcomesLabel: "Der nächste Weg",
+    outcomes: [
+      { icon: "reuse" as const, title: "Zurück in den Kreislauf", text: "Wiederverwendbare Kleidung wird für internationale Textilmärkte vorbereitet." },
+      { icon: "recycle" as const, title: "Stoffliche Verwertung", text: "Nicht wiederverwendbare Textilien werden zum Recycling und zur Rohstoffgewinnung weitergegeben." },
+    ],
+    contactEyebrow: "Direkter Kontakt",
+    contactTitle: "Sie möchten Rohware anbieten oder sortierte Ware beziehen?",
+    contactText: "Sprechen Sie mit Reinhold Thate direkt über Mengen, Spezifikationen und die nächsten Schritte.",
+    callButton: "Jetzt anrufen",
+    contactButton: "Kontaktdaten",
+  },
+  fr: {
+    heroEyebrow: "Tri textile · Commerce international",
+    heroTitle: "Trier les textiles. Préserver leur valeur. Prolonger leur durée de vie.",
+    heroText: "TexGrade trie avec soin des textiles usagés collectés dans la région et les prépare à être réutilisés sur les marchés textiles internationaux.",
+    servicesButton: "Découvrir nos services",
+    contactLink: "Nous contacter",
+    factsLabel: "TexGrade en bref",
+    facts: [["7,5+ millions de kg", "Textiles triés chaque année"], ["30+ ans", "D’expérience sur le marché"], ["3 régions", "Europe, Afrique et Asie"]],
+    audienceEyebrow: "Pour les fournisseurs et les acheteurs",
+    audienceTitle: "Deux besoins. Un interlocuteur direct.",
+    audienceIntro: "Que vous souhaitiez proposer des textiles collectés ou acheter des assortiments triés, nous étudions directement vos besoins avec vous.",
+    audiences: [
+      { icon: "truck" as const, label: "Pour les collecteurs et fournisseurs", title: "Proposer des textiles bruts", text: "Vous collectez des textiles usagés et recherchez un acheteur fiable ? TexGrade est votre interlocuteur direct et peut, si nécessaire, vous mettre en relation avec des réseaux de collecte.", button: "Proposer des textiles" },
+      { icon: "pack" as const, label: "Pour les négociants et acheteurs", title: "Acheter des produits triés", text: "Vous recherchez des textiles triés selon la qualité, la saison et le marché cible ? Nous préparons des assortiments adaptés à nos clients internationaux.", button: "Demander des produits triés" },
+    ],
+    missionEyebrow: "Notre mission",
+    missionTitle: "Maintenir le plus de textiles possible dans le circuit.",
+    missionText: "Notre objectif est de prolonger la durée d’utilisation des textiles grâce à un tri manuel minutieux. Les vêtements réutilisables retrouvent le circuit commercial ; les textiles qui ne peuvent plus être réemployés sont orientés vers la valorisation matière.",
+    missionStatement: "Réutiliser chaque fois que possible. Recycler lorsque cela est nécessaire.",
+    flowEyebrow: "Le flux textile",
+    flowTitle: "De la collecte à une nouvelle utilisation.",
+    flowIntro: "Un processus transparent transforme des flux textiles mixtes en marchandises clairement définies et oriente chaque matière vers la solution la plus adaptée.",
+    flowLabel: "Flux textile TexGrade",
+    flowSteps: [
+      { icon: "collect" as const, title: "Dépôt & collecte", text: "Les vêtements qui ne sont plus utilisés rejoignent les systèmes de collecte établis." },
+      { icon: "truck" as const, title: "Collecte régionale", text: "Les collecteurs regroupent et consolident les textiles." },
+      { icon: "sort" as const, title: "Tri manuel", text: "Les équipes expérimentées de TexGrade évaluent chaque article selon le type, la qualité et la saison." },
+      { icon: "grade" as const, title: "Spécification client", text: "Les produits réutilisables sont regroupés selon le marché et la commande." },
+      { icon: "pack" as const, title: "Conditionnement", text: "Les assortiments terminés sont préparés pour la suite du transport." },
+    ],
+    outcomesLabel: "L’étape suivante",
+    outcomes: [
+      { icon: "reuse" as const, title: "Retour dans le circuit", text: "Les vêtements réutilisables sont préparés pour les marchés textiles internationaux." },
+      { icon: "recycle" as const, title: "Valorisation matière", text: "Les textiles non réutilisables sont transmis pour être recyclés et valorisés comme matières premières." },
+    ],
+    contactEyebrow: "Contact direct",
+    contactTitle: "Vous souhaitez proposer des textiles ou acheter des produits triés ?",
+    contactText: "Échangez directement avec Reinhold Thate au sujet des volumes, des spécifications et des prochaines étapes.",
+    callButton: "Appeler maintenant",
+    contactButton: "Coordonnées",
   },
 } as const;
 
@@ -99,65 +154,74 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="section service-intro">
+      <section className="section audience-section">
         <div className="shell">
           <div className="section-heading split-heading">
-            <div><span className="eyebrow">{copy.serviceEyebrow}</span><h2>{copy.serviceTitle}</h2></div>
-            <p>{copy.serviceIntro}</p>
+            <div><span className="eyebrow">{copy.audienceEyebrow}</span><h2>{copy.audienceTitle}</h2></div>
+            <p>{copy.audienceIntro}</p>
           </div>
-          <div className="service-grid">
-            {copy.services.map((service, index) => (
-              <article className="service-card" key={service.title}>
-                <div className="service-number">0{index + 1}</div>
-                <Icon name={service.icon} />
-                <h3>{service.title}</h3>
-                <p>{service.text}</p>
+          <div className="audience-paths">
+            {copy.audiences.map((audience) => (
+              <article className="audience-path" key={audience.title}>
+                <div className="audience-path-icon"><Icon name={audience.icon} /></div>
+                <span>{audience.label}</span>
+                <h3>{audience.title}</h3>
+                <p>{audience.text}</p>
+                <Link className="inline-cta" href={routes.contact}>{audience.button} <Icon name="arrow" /></Link>
               </article>
             ))}
           </div>
-          <Link className="inline-cta" href={routes.services}>{copy.processLink} <Icon name="arrow" /></Link>
         </div>
       </section>
 
-      <section className="section dark-section">
+      <section className="section mission-section">
+        <div className="shell mission-grid">
+          <div><span className="eyebrow light">{copy.missionEyebrow}</span><h2>{copy.missionTitle}</h2></div>
+          <div className="mission-copy"><p>{copy.missionText}</p><strong>{copy.missionStatement}</strong></div>
+        </div>
+      </section>
+
+      <section className="section flow-section">
         <div className="shell">
-          <div className="section-heading split-heading light-heading">
-            <div><span className="eyebrow light">{copy.marketsEyebrow}</span><h2>{copy.marketsTitle}</h2></div>
-            <p>{copy.marketsIntro}</p>
+          <div className="section-heading split-heading">
+            <div><span className="eyebrow">{copy.flowEyebrow}</span><h2>{copy.flowTitle}</h2></div>
+            <p>{copy.flowIntro}</p>
           </div>
-          <MarketExplorer locale={locale} />
+          <div className="textile-flow" aria-label={copy.flowLabel}>
+            {copy.flowSteps.map((step, index) => (
+              <article className="flow-step" key={step.title}>
+                <span className="flow-number">0{index + 1}</span>
+                <div className="flow-icon"><Icon name={step.icon} /></div>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="flow-outcomes">
+            <span className="outcomes-label">{copy.outcomesLabel}</span>
+            <div className="outcomes-grid">
+              {copy.outcomes.map((outcome) => (
+                <article key={outcome.title}>
+                  <Icon name={outcome.icon} />
+                  <div><h3>{outcome.title}</h3><p>{outcome.text}</p></div>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="section principle-section">
-        <div className="shell principle-grid">
-          <div className="principle-visual">
-            <Image src="/images/textile-storage.webp" alt={copy.storageAlt} fill sizes="(max-width: 980px) 100vw, 50vw" />
-            <div className="bale-label">Sorted by article.<br />Prepared for trade.</div>
+      <section className="cta-section contact-cta">
+        <div className="shell contact-cta-grid">
+          <div><span className="eyebrow light">{copy.contactEyebrow}</span><h2>{copy.contactTitle}</h2><p>{copy.contactText}</p></div>
+          <div className="contact-person-cta">
+            <span>Reinhold Thate</span>
+            <a href="tel:+491714706260">+49 171 470 62 60</a>
+            <div>
+              <a className="button light-button" href="tel:+491714706260">{copy.callButton}</a>
+              <Link className="button outline-light" href={routes.contact}>{copy.contactButton}</Link>
+            </div>
           </div>
-          <div className="principle-copy">
-            <span className="eyebrow">{copy.principleEyebrow}</span>
-            <h2>{copy.principleTitle}</h2>
-            <p>{copy.principleText}</p>
-            <ul className="check-list">
-              {copy.checks.map((item) => <li key={item}><Icon name="check" /> {item}</li>)}
-            </ul>
-            <Link className="button secondary" href={routes.company}>{copy.companyLink}</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section cycle-section">
-        <div className="shell cycle-grid">
-          <div><span className="eyebrow">{copy.cycleEyebrow}</span><h2>{copy.cycleTitle}</h2></div>
-          <div className="cycle-copy">{copy.cycleText.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
-        </div>
-      </section>
-
-      <section className="cta-section">
-        <div className="shell cta-inner">
-          <div><span className="eyebrow light">{copy.ctaEyebrow}</span><h2>{copy.ctaTitle}</h2></div>
-          <Link className="button light-button" href={routes.contact}>{copy.ctaButton} <Icon name="arrow" /></Link>
         </div>
       </section>
     </>

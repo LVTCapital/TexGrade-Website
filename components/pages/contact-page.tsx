@@ -33,6 +33,22 @@ const content = {
     supplierTitle: "Supply used textiles",
     supplierText: "Suppliers of regionally collected used textiles can coordinate volumes, quality, collection or delivery directly with us.",
   },
+  fr: {
+    eyebrow: "Contact",
+    title: "Votre interlocuteur pour l’achat et la fourniture.",
+    intro: "Que vous souhaitiez acheter des textiles de seconde main triés ou proposer des textiles usagés collectés dans la région, contactez-nous directement.",
+    personEyebrow: "Votre interlocuteur",
+    role: "Gérant · TexGrade GmbH & Co. KG",
+    location: "Site",
+    country: "Allemagne",
+    call: "Appeler Reinhold Thate",
+    customer: "Pour les clients",
+    customerTitle: "Acheter des produits triés",
+    customerText: "Nous échangeons avec vous sur le marché cible, les catégories d’articles, la qualité, la saison et les volumes prévus.",
+    supplier: "Pour les fournisseurs",
+    supplierTitle: "Proposer des textiles usagés",
+    supplierText: "Les fournisseurs de textiles usagés collectés dans la région peuvent convenir directement avec nous des volumes, de la qualité, de l’enlèvement ou de la livraison.",
+  },
 } as const;
 
 export function ContactPage({ locale }: { locale: Locale }) {

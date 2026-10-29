@@ -1,31 +1,38 @@
-export type Locale = "de" | "en";
+export type Locale = "en" | "de" | "fr";
 
 export const siteRoutes = {
-  de: {
-    home: "/",
-    services: "/leistungen",
-    company: "/unternehmen",
-    contact: "/kontakt",
-    legal: "/impressum",
-    privacy: "/datenschutz",
-  },
   en: {
-    home: "/en",
-    services: "/en/services",
-    company: "/en/company",
-    contact: "/en/contact",
-    legal: "/en/legal-notice",
-    privacy: "/en/privacy",
+    home: "/",
+    services: "/services",
+    company: "/company",
+    contact: "/contact",
+    legal: "/legal-notice",
+    privacy: "/privacy",
+  },
+  de: {
+    home: "/de",
+    services: "/de/leistungen",
+    company: "/de/unternehmen",
+    contact: "/de/kontakt",
+    legal: "/de/impressum",
+    privacy: "/de/datenschutz",
+  },
+  fr: {
+    home: "/fr",
+    services: "/fr/services",
+    company: "/fr/entreprise",
+    contact: "/fr/contact",
+    legal: "/fr/mentions-legales",
+    privacy: "/fr/confidentialite",
   },
 } as const;
 
-const routePairs = Object.keys(siteRoutes.de).map((key) => {
-  const routeKey = key as keyof typeof siteRoutes.de;
-  return [siteRoutes.de[routeKey], siteRoutes.en[routeKey]] as const;
-});
+const routeKeys = Object.keys(siteRoutes.en) as Array<keyof typeof siteRoutes.en>;
 
 export function alternateLanguagePath(pathname: string, targetLocale: Locale) {
-  const pair = routePairs.find(([dePath, enPath]) => pathname === dePath || pathname === enPath);
-  if (!pair) return siteRoutes[targetLocale].home;
-  return targetLocale === "de" ? pair[0] : pair[1];
+  const routeKey = routeKeys.find((key) =>
+    Object.values(siteRoutes).some((routes) => routes[key] === pathname),
+  );
+
+  return routeKey ? siteRoutes[targetLocale][routeKey] : siteRoutes[targetLocale].home;
 }

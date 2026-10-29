@@ -7,19 +7,6 @@ import { Logo } from "./logo";
 import { alternateLanguagePath, type Locale, siteRoutes } from "@/lib/i18n";
 
 const copy = {
-  de: {
-    links: [
-      { href: siteRoutes.de.home, label: "Startseite" },
-      { href: siteRoutes.de.services, label: "Leistungen" },
-      { href: siteRoutes.de.company, label: "Unternehmen" },
-      { href: siteRoutes.de.contact, label: "Kontakt" },
-    ],
-    navigation: "Hauptnavigation",
-    open: "Navigation öffnen",
-    close: "Navigation schließen",
-    cta: "Anfrage senden",
-    languages: "Sprache wählen",
-  },
   en: {
     links: [
       { href: siteRoutes.en.home, label: "Home" },
@@ -33,7 +20,39 @@ const copy = {
     cta: "Send enquiry",
     languages: "Select language",
   },
+  de: {
+    links: [
+      { href: siteRoutes.de.home, label: "Startseite" },
+      { href: siteRoutes.de.services, label: "Leistungen" },
+      { href: siteRoutes.de.company, label: "Unternehmen" },
+      { href: siteRoutes.de.contact, label: "Kontakt" },
+    ],
+    navigation: "Hauptnavigation",
+    open: "Navigation öffnen",
+    close: "Navigation schließen",
+    cta: "Anfrage senden",
+    languages: "Sprache wählen",
+  },
+  fr: {
+    links: [
+      { href: siteRoutes.fr.home, label: "Accueil" },
+      { href: siteRoutes.fr.services, label: "Services" },
+      { href: siteRoutes.fr.company, label: "Entreprise" },
+      { href: siteRoutes.fr.contact, label: "Contact" },
+    ],
+    navigation: "Navigation principale",
+    open: "Ouvrir la navigation",
+    close: "Fermer la navigation",
+    cta: "Envoyer une demande",
+    languages: "Choisir la langue",
+  },
 } as const;
+
+const languages: Array<{ locale: Locale; code: string; flag: string; label: string }> = [
+  { locale: "en", code: "EN", flag: "🇬🇧", label: "English" },
+  { locale: "de", code: "DE", flag: "🇩🇪", label: "Deutsch" },
+  { locale: "fr", code: "FR", flag: "🇫🇷", label: "Français" },
+];
 
 export function Header({ locale }: { locale: Locale }) {
   const pathname = usePathname();
@@ -66,25 +85,21 @@ export function Header({ locale }: { locale: Locale }) {
             </Link>
           ))}
           <div className="language-switch" aria-label={content.languages}>
-            <Link
-              className={locale === "de" ? "active" : undefined}
-              href={alternateLanguagePath(pathname, "de")}
-              hrefLang="de"
-              lang="de"
-              onClick={() => setOpen(false)}
-            >
-              DE
-            </Link>
-            <span aria-hidden="true">/</span>
-            <Link
-              className={locale === "en" ? "active" : undefined}
-              href={alternateLanguagePath(pathname, "en")}
-              hrefLang="en"
-              lang="en"
-              onClick={() => setOpen(false)}
-            >
-              EN
-            </Link>
+            {languages.map((language) => (
+              <Link
+                key={language.locale}
+                className={locale === language.locale ? "active" : undefined}
+                href={alternateLanguagePath(pathname, language.locale)}
+                hrefLang={language.locale}
+                lang={language.locale}
+                aria-label={language.label}
+                aria-current={locale === language.locale ? "page" : undefined}
+                onClick={() => setOpen(false)}
+              >
+                <span aria-hidden="true">{language.flag}</span>
+                <span>{language.code}</span>
+              </Link>
+            ))}
           </div>
           <Link className="nav-cta" href={siteRoutes[locale].contact} onClick={() => setOpen(false)}>
             {content.cta}

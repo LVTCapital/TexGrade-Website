@@ -42,6 +42,25 @@ const content = {
     locationText: "Our facility in Lower Saxony connects the processing of regionally collected goods with sales markets in Europe, Africa and Asia.",
     contact: "Contact us",
   },
+  fr: {
+    eyebrow: "Entreprise",
+    title: "Une expertise du tri tournée vers l’international.",
+    intro: "TexGrade associe plus de 30 ans d’expérience du marché au traitement de textiles usagés collectés dans la région et à leur distribution internationale.",
+    storyEyebrow: "Notre activité",
+    storyTitle: "Nous créons des groupes de produits clairement définis à partir de flux textiles variés.",
+    story: ["Sur notre site de Melle, TexGrade traite des textiles usagés collectés dans la région et les trie par article selon des exigences de qualité convenues. Plus de 7 500 000 kilogrammes de textiles passent chaque année par notre entreprise.", "Nous préparons les vêtements réutilisables pour l’exportation en Europe, en Afrique et en Asie. Les textiles qui ne peuvent pas être réutilisés sont orientés vers des filières de recyclage adaptées."],
+    valuesEyebrow: "Notre manière de travailler",
+    valuesTitle: "Pratique. Claire. Fiable.",
+    values: [
+      ["Plus de 30 ans d’expérience", "Notre connaissance approfondie du marché constitue la base de notre activité de tri et de notre distribution internationale."],
+      ["Plus de 7,5 millions de kg par an", "Ce volume de textiles usagés est traité, trié et orienté chaque année vers la filière la plus adaptée."],
+      ["Europe, Afrique et Asie", "Nous fournissons des acheteurs professionnels sur les marchés européens et internationaux."],
+    ],
+    locationEyebrow: "Site en Allemagne",
+    locationTitle: "Collectés dans la région. Triés à Melle. Distribués dans le monde.",
+    locationText: "Notre site en Basse-Saxe relie le traitement de marchandises collectées dans la région aux marchés d’Europe, d’Afrique et d’Asie.",
+    contact: "Nous contacter",
+  },
 } as const;
 
 export function CompanyPage({ locale }: { locale: Locale }) {

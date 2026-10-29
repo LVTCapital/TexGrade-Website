@@ -1,10 +1,10 @@
 # TexGrade Website
 
-Corporate website for TexGrade GmbH & Co. KG, built with Next.js and prepared for deployment on Fly.io.
+Corporate website for TexGrade GmbH & Co. KG, built with Next.js and deployed as a Docker web service on Render.
 
-The site is available in German and English. German is served from the main routes, while the English version starts at `/en`. The language switch keeps visitors on the corresponding page.
+The site is available in English, German and French. English is the default language at `/`, German starts at `/de` and French at `/fr`. The language switch keeps visitors on the corresponding page.
 
-Production deployments are protected with HTTP Basic Authentication. Set the runtime secrets `PREVIEW_USERNAME` and `PREVIEW_PASSWORD` before starting the Fly.io application. Without both values, production returns a closed `503` response.
+Production deployments are protected with HTTP Basic Authentication. Set the runtime environment variables `PREVIEW_USERNAME` and `PREVIEW_PASSWORD` in Render. Without both values, production returns a closed `503` response.
 
 ## Local development
 
@@ -22,10 +22,11 @@ npm run build
 npm start
 ```
 
-The project uses Next.js standalone output for a compact Fly.io container image.
+The project uses Next.js standalone output for a compact Docker container image.
 
 ## Before public launch
 
 - Confirm the final contact email address.
+- Replace the temporary visual elements with the final company photography.
 - Replace the draft legal notice and privacy page with reviewed final text.
 - Connect the production domain only after explicit approval.

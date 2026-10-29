@@ -4,8 +4,21 @@ import type { Locale } from "@/lib/i18n";
 import { siteRoutes } from "@/lib/i18n";
 
 const copy = {
+  en: {
+    description: "Carefully sorted second-hand textiles for international business customers.",
+    company: "Company",
+    services: "Services",
+    about: "About TexGrade",
+    contact: "Contact",
+    legal: "Legal",
+    legalNotice: "Legal notice",
+    privacy: "Privacy",
+    location: "Location",
+    place: "Melle, Germany",
+    claim: "Collected regionally. Circulated internationally.",
+  },
   de: {
-    description: "Sortierte Secondhand-Textilien für internationale Geschäftskunden.",
+    description: "Sorgfältig sortierte Secondhand-Textilien für internationale Geschäftskunden.",
     company: "Unternehmen",
     services: "Leistungen",
     about: "Über TexGrade",
@@ -17,18 +30,18 @@ const copy = {
     place: "Melle, Deutschland",
     claim: "Regional erfasst. International im Kreislauf.",
   },
-  en: {
-    description: "Sorted second-hand textiles for international business customers.",
-    company: "Company",
+  fr: {
+    description: "Des textiles de seconde main soigneusement triés pour les professionnels internationaux.",
+    company: "Entreprise",
     services: "Services",
-    about: "About TexGrade",
+    about: "À propos de TexGrade",
     contact: "Contact",
-    legal: "Legal",
-    legalNotice: "Legal notice",
-    privacy: "Privacy",
-    location: "Location",
-    place: "Melle, Germany",
-    claim: "Collected regionally. Circulated internationally.",
+    legal: "Informations légales",
+    legalNotice: "Mentions légales",
+    privacy: "Confidentialité",
+    location: "Site",
+    place: "Melle, Allemagne",
+    claim: "Collectés localement. Remis en circulation dans le monde.",
   },
 } as const;
 
@@ -58,7 +71,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <p className="footer-heading">{content.location}</p>
           <p>{content.place}</p>
           <a href="tel:+491714706260">Reinhold Thate</a>
-          <a href="tel:+491714706260">+49 171 4706260</a>
+          <a href="tel:+491714706260">+49 171 470 62 60</a>
         </div>
       </div>
       <div className="shell footer-bottom">
