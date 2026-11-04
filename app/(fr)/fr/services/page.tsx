@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ServicesPage } from "@/components/pages/services-page";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Achat & Vente",
   alternates: { canonical: "/fr/services", languages: { en: "/services", de: "/de/leistungen", fr: "/fr/services" } },
 };
 

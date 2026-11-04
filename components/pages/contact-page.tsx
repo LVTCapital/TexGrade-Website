@@ -7,6 +7,7 @@ const content = {
     intro: "Ob Sie sortierte Secondhand-Textilien beziehen oder regional erfasste Altkleider anliefern möchten: Sprechen Sie uns direkt an.",
     personEyebrow: "Ihr Ansprechpartner",
     role: "Geschäftsführer · TexGrade GmbH & Co. KG",
+    email: "E-Mail",
     location: "Standort",
     country: "Deutschland",
     call: "Reinhold Thate anrufen",
@@ -23,6 +24,7 @@ const content = {
     intro: "Whether you want to purchase sorted second-hand textiles or supply regionally collected used textiles, contact us directly.",
     personEyebrow: "Your contact",
     role: "Managing Director · TexGrade GmbH & Co. KG",
+    email: "Email",
     location: "Location",
     country: "Germany",
     call: "Call Reinhold Thate",
@@ -39,6 +41,7 @@ const content = {
     intro: "Que vous souhaitiez acheter des textiles de seconde main triés ou proposer des textiles usagés collectés dans la région, contactez-nous directement.",
     personEyebrow: "Votre interlocuteur",
     role: "Gérant · TexGrade GmbH & Co. KG",
+    email: "E-mail",
     location: "Site",
     country: "Allemagne",
     call: "Appeler Reinhold Thate",
@@ -66,6 +69,7 @@ export function ContactPage({ locale }: { locale: Locale }) {
             <h2>Reinhold Thate</h2>
             <p className="contact-role">{copy.role}</p>
             <a className="contact-phone" href="tel:+491714706260">+49 171 4706260</a>
+            <div className="contact-block"><span>{copy.email}</span><p><a href="mailto:info@texgrade.com">info@texgrade.com</a></p></div>
             <div className="contact-block"><span>{copy.location}</span><p>Bismarckstraße 30<br />49324 Melle<br />{copy.country}</p></div>
             <a className="button primary" href="tel:+491714706260">{copy.call}</a>
           </div>

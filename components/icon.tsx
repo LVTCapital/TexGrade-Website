@@ -2,7 +2,7 @@ type IconName = "collect" | "truck" | "sort" | "grade" | "pack" | "ship" | "reus
 
 export function Icon({ name }: { name: IconName }) {
   const paths: Record<IconName, React.ReactNode> = {
-    collect: <><path d="M7 8h10l-1 12H8L7 8Z" /><path d="M9 8V5h6v3M5 8h14" /></>,
+    collect: <><path d="M8 4 4 6.5 2 11l4 2v7h12v-7l4-2-2-4.5L16 4c-.7 1.5-2.1 2.5-4 2.5S8.7 5.5 8 4Z" /></>,
     truck: <><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z" /><circle cx="7" cy="19" r="2" /><circle cx="18" cy="19" r="2" /></>,
     sort: <><path d="M5 7h14M8 12h8M10 17h4" /><path d="m17 15 2 2 3-4" /></>,
     grade: <><path d="M4 5h16v14H4z" /><path d="M8 9h8M8 13h5" /></>,

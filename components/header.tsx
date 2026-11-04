@@ -10,7 +10,7 @@ const copy = {
   en: {
     links: [
       { href: siteRoutes.en.home, label: "Home" },
-      { href: siteRoutes.en.services, label: "Services" },
+      { href: siteRoutes.en.services, label: "Purchasing & Sales" },
       { href: siteRoutes.en.company, label: "Company" },
       { href: siteRoutes.en.contact, label: "Contact" },
     ],
@@ -23,7 +23,7 @@ const copy = {
   de: {
     links: [
       { href: siteRoutes.de.home, label: "Startseite" },
-      { href: siteRoutes.de.services, label: "Leistungen" },
+      { href: siteRoutes.de.services, label: "Ankauf & Verkauf" },
       { href: siteRoutes.de.company, label: "Unternehmen" },
       { href: siteRoutes.de.contact, label: "Kontakt" },
     ],
@@ -36,7 +36,7 @@ const copy = {
   fr: {
     links: [
       { href: siteRoutes.fr.home, label: "Accueil" },
-      { href: siteRoutes.fr.services, label: "Services" },
+      { href: siteRoutes.fr.services, label: "Achat & Vente" },
       { href: siteRoutes.fr.company, label: "Entreprise" },
       { href: siteRoutes.fr.contact, label: "Contact" },
     ],

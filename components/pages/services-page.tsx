@@ -5,121 +5,82 @@ import { siteRoutes } from "@/lib/i18n";
 
 const content = {
   en: {
-    eyebrow: "Services",
-    title: "Two requirements. One reliable partner.",
-    intro: "TexGrade combines the direct intake of regionally collected textiles with the preparation of sorted goods for international markets.",
+    eyebrow: "Purchasing & Sales",
+    title: "Two ways to work together. One reliable partner.",
+    intro: "TexGrade combines the direct intake of regionally collected textiles with the preparation of sorted goods for national and international markets.",
     pathways: [
-      { icon: "truck" as const, label: "For collectors and suppliers", title: "Supply unsorted textiles", text: "If you collect used textiles and need a reliable buyer, TexGrade is your direct point of contact. We coordinate the details personally and can connect you with our collection networks where required.", bullets: ["Direct business contact", "Coordination of volumes and delivery", "Connection to collection networks where required"], button: "Offer unsorted textiles" },
-      { icon: "pack" as const, label: "For traders and buyers", title: "Purchase sorted goods", text: "If you need sorted textiles tailored to your requirements, we prepare assortments by article, quality, season and target market for international distribution.", bullets: ["Customer-specific article lists", "Quality and seasonal specifications", "Preparation for international markets"], button: "Enquire about sorted goods" },
+      { icon: "truck" as const, label: "For collectors and suppliers", title: "Supply unsorted textiles", text: "If you collect used textiles and are looking for a reliable buyer, TexGrade is your direct point of contact. We coordinate the details personally and look forward to hearing from you.", bullets: ["Direct business contact", "Coordination of volumes and delivery"], button: "Offer unsorted textiles" },
+      { icon: "pack" as const, label: "For traders and buyers", title: "Purchase sorted goods", text: "If you are looking for sorted textiles that meet your requirements, we prepare assortments by article, quality, season and target market for national and international distribution.", bullets: ["Customer-specific article lists", "Quality and seasonal specifications", "Flexible delivery tailored to your needs"], button: "Enquire about sorted goods" },
     ],
     contactLabel: "Direct point of contact",
     contactText: "Discuss raw materials, finished assortments and the next steps directly with Reinhold Thate.",
     call: "Call +49 171 470 62 60",
-    processEyebrow: "Our process",
-    processTitle: "From intake to shipment-ready categories.",
-    processIntro: "More than 7.5 million kilograms of regionally collected used textiles pass through this process every year.",
-    steps: [
-      { icon: "truck" as const, title: "Intake & preparation", text: "Regionally collected used textiles are received and prepared for the sorting process." },
-      { icon: "sort" as const, title: "Manual sorting", text: "Experienced teams assess each item by article, quality, season and agreed specification." },
-      { icon: "grade" as const, title: "Order-specific grading", text: "Reusable goods are combined according to the requirements of the customer and target market." },
-      { icon: "pack" as const, title: "Packing & dispatch preparation", text: "Finished categories are organised and packed for efficient onward transport." },
-      { icon: "recycle" as const, title: "Recycling stream", text: "Textiles that are no longer suitable for reuse are directed to material recycling." },
-    ],
     qualityEyebrow: "Quality in sorting",
-    qualityTitle: "Article and quality grade are assessed separately.",
+    qualityTitle: "Careful manual sorting by experienced specialists.",
+    qualityIntro: "Our sorters inspect each textile individually by hand. Drawing on their experience, they assess the type of article, condition, quality and season and assign each item to the appropriate product category. This creates reliable assortments that are precisely tailored to our customers’ requirements.",
     qualityPoints: [
-      ["Manual visual inspection", "Textiles are assessed individually and assigned to the agreed category."],
+      ["Experienced manual sorting", "Each textile is inspected individually, assessed professionally and assigned to the appropriate category according to its characteristics."],
       ["Defined criteria", "Quality, season and article structure are coordinated before production begins."],
-      ["Order-specific control", "The finished assortment is aligned with the customer’s concrete requirements."],
+      ["Order-specific control", "The finished assortment is based on the specific customer specification."],
     ],
-    structureEyebrow: "Flexible product structure",
-    structureTitle: "Assortments aligned with market and demand.",
-    structureIntro: "The exact article list is agreed with each customer. Typical sorting dimensions include:",
-    categories: [
-      { title: "By article", items: ["Tops", "Trousers & denim", "Shorts", "Additional clothing categories"] },
-      { title: "By season", items: ["Summer wear", "Transitional assortments", "Winter wear", "Market-specific combinations"] },
-      { title: "By specification", items: ["Quality grades", "Customer-specific article lists", "Order-specific mixes", "Packaging requirements"] },
-    ],
+    structureEyebrow: "Individual assortments",
+    structureTitle: "Compiled to suit your market.",
+    structureIntro: "From numerous articles and quality grades, we compile the right assortment for your needs.",
+    structureDimensions: "Article · Quality · Season · Packaging",
     ctaEyebrow: "For customers and suppliers",
     ctaTitle: "Let us discuss categories, volumes, target market or delivery.",
     ctaButton: "Contact Reinhold Thate",
   },
   de: {
-    eyebrow: "Leistungen",
-    title: "Zwei Anforderungen. Ein verlässlicher Partner.",
-    intro: "TexGrade verbindet die direkte Annahme regional erfasster Alttextilien mit der Bereitstellung sortierter Ware für internationale Märkte.",
+    eyebrow: "Ankauf & Verkauf",
+    title: "Zwei Wege zur Zusammenarbeit. Ein verlässlicher Partner.",
+    intro: "TexGrade verbindet die direkte Annahme regional erfasster Alttextilien mit der Bereitstellung sortierter Ware für nationale und internationale Märkte.",
     pathways: [
-      { icon: "truck" as const, label: "Für Sammler und Lieferanten", title: "Rohware anbieten", text: "Wenn Sie Alttextilien sammeln und einen zuverlässigen Abnehmer suchen, ist TexGrade Ihr direkter Ansprechpartner. Wir stimmen die Einzelheiten persönlich ab und vermitteln bei Bedarf Kontakte innerhalb unserer Sammlernetzwerke.", bullets: ["Direkter geschäftlicher Ansprechpartner", "Abstimmung von Mengen und Anlieferung", "Vermittlung in Sammlernetzwerke bei Bedarf"], button: "Rohware anbieten" },
-      { icon: "pack" as const, label: "Für Händler und Abnehmer", title: "Sortierte Ware beziehen", text: "Wenn Sie sortierte Textilien nach Ihren Anforderungen suchen, stellen wir Sortimente nach Artikel, Qualität, Saison und Zielmarkt für den internationalen Vertrieb zusammen.", bullets: ["Kundenspezifische Artikellisten", "Qualitäts- und Saisonvorgaben", "Vorbereitung für internationale Märkte"], button: "Sortierte Ware anfragen" },
+      { icon: "truck" as const, label: "Für Sammler und Lieferanten", title: "Rohware anbieten", text: "Wenn Sie Alttextilien sammeln und einen zuverlässigen Abnehmer suchen, ist TexGrade Ihr direkter Ansprechpartner. Wir stimmen die Einzelheiten persönlich ab und freuen uns auf den ersten Kontakt.", bullets: ["Direkter geschäftlicher Ansprechpartner", "Abstimmung von Mengen und Anlieferung"], button: "Rohware anbieten" },
+      { icon: "pack" as const, label: "Für Händler und Abnehmer", title: "Sortierte Ware beziehen", text: "Wenn Sie sortierte Textilien nach Ihren Anforderungen suchen, stellen wir Sortimente nach Artikel, Qualität, Saison und Zielmarkt für den nationalen und internationalen Vertrieb zusammen.", bullets: ["Kundenspezifische Artikellisten", "Qualitäts- und Saisonvorgaben", "Flexible Lieferung ganz nach Ihrem Bedarf"], button: "Sortierte Ware anfragen" },
     ],
     contactLabel: "Direkter Ansprechpartner",
     contactText: "Besprechen Sie Rohware, fertige Sortimente und die nächsten Schritte direkt mit Reinhold Thate.",
     call: "+49 171 470 62 60 anrufen",
-    processEyebrow: "Unser Prozess",
-    processTitle: "Vom Eingang bis zur versandfertigen Kategorie.",
-    processIntro: "Mehr als 7,5 Millionen Kilogramm regional erfasster Alttextilien durchlaufen diesen Prozess jedes Jahr.",
-    steps: [
-      { icon: "truck" as const, title: "Annahme & Vorbereitung", text: "Regional erfasste Alttextilien werden aufgenommen und für den Sortierprozess vorbereitet." },
-      { icon: "sort" as const, title: "Manuelle Sortierung", text: "Erfahrene Teams beurteilen jedes Stück nach Artikel, Qualität, Saison und vereinbarter Spezifikation." },
-      { icon: "grade" as const, title: "Auftragsbezogenes Grading", text: "Wiederverwendbare Ware wird passend zu den Anforderungen von Kunde und Zielmarkt zusammengestellt." },
-      { icon: "pack" as const, title: "Verpackung & Versandvorbereitung", text: "Die fertigen Kategorien werden strukturiert und transportgerecht verpackt." },
-      { icon: "recycle" as const, title: "Recyclingstrom", text: "Textilien, die nicht mehr für eine Wiederverwendung geeignet sind, werden der stofflichen Verwertung zugeführt." },
-    ],
     qualityEyebrow: "Qualität in der Sortierung",
-    qualityTitle: "Artikel und Qualitätsstufe werden getrennt betrachtet.",
+    qualityTitle: "Sorgfältige Handsortierung durch erfahrene Fachkräfte.",
+    qualityIntro: "Unsere Sortiererinnen und Sortierer prüfen jedes Textil einzeln von Hand. Mit ihrer Erfahrung beurteilen sie Artikelart, Zustand, Qualität und Saison und ordnen jedes Stück der passenden Produktkategorie zu. So entstehen verlässliche Sortierungen, die genau auf die Anforderungen unserer Kunden abgestimmt sind.",
     qualityPoints: [
-      ["Manuelle Sichtprüfung", "Textilien werden einzeln beurteilt und der vereinbarten Kategorie zugeordnet."],
-      ["Definierte Kriterien", "Qualität, Saison und Artikelstruktur werden vor Produktionsbeginn abgestimmt."],
+      ["Erfahrene Handsortierung", "Jedes Textil wird einzeln geprüft, fachkundig beurteilt und anhand seiner Eigenschaften der passenden Kategorie zugeordnet."],
+      ["Definierte Kriterien", "Qualität, Saison und Artikelstruktur werden vor Produktionsbeginn gemeinsam abgestimmt."],
       ["Auftragsbezogene Kontrolle", "Die fertige Zusammenstellung richtet sich nach der konkreten Kundenspezifikation."],
     ],
-    structureEyebrow: "Flexible Produktstruktur",
-    structureTitle: "Sortimente passend zu Markt und Bedarf.",
-    structureIntro: "Die genaue Artikelliste wird mit dem Kunden abgestimmt. Typische Sortierdimensionen sind:",
-    categories: [
-      { title: "Nach Artikel", items: ["Oberteile", "Hosen & Denim", "Shorts", "Weitere Bekleidungskategorien"] },
-      { title: "Nach Saison", items: ["Sommerware", "Übergangssortimente", "Winterware", "Marktbezogene Kombinationen"] },
-      { title: "Nach Spezifikation", items: ["Qualitätsstufen", "Kundeneigene Artikellisten", "Auftragsbezogene Mischung", "Verpackungsanforderungen"] },
-    ],
+    structureEyebrow: "Individuelle Sortimente",
+    structureTitle: "Passend für Ihren Markt zusammengestellt.",
+    structureIntro: "Aus zahlreichen Artikeln und Qualitätsstufen stellen wir die passende Sortierung für Ihren Bedarf zusammen.",
+    structureDimensions: "Artikel · Qualität · Saison · Verpackung",
     ctaEyebrow: "Für Kunden und Lieferanten",
     ctaTitle: "Lassen Sie uns Kategorien, Mengen, Zielmarkt oder Anlieferung besprechen.",
     ctaButton: "Reinhold Thate kontaktieren",
   },
   fr: {
-    eyebrow: "Services",
-    title: "Deux besoins. Un partenaire fiable.",
-    intro: "TexGrade associe l’achat direct de textiles usagés collectés dans la région à la préparation de produits triés pour les marchés internationaux.",
+    eyebrow: "Achat & Vente",
+    title: "Deux façons de collaborer. Un partenaire fiable.",
+    intro: "TexGrade associe l’achat direct de textiles usagés collectés dans la région à la préparation de produits triés pour les marchés nationaux et internationaux.",
     pathways: [
-      { icon: "truck" as const, label: "Pour les collecteurs et fournisseurs", title: "Proposer des textiles bruts", text: "Si vous collectez des textiles usagés et recherchez un acheteur fiable, TexGrade est votre interlocuteur direct. Nous convenons personnellement des détails et pouvons, si nécessaire, vous mettre en relation avec nos réseaux de collecte.", bullets: ["Interlocuteur commercial direct", "Accord sur les volumes et la livraison", "Mise en relation avec des réseaux de collecte si nécessaire"], button: "Proposer des textiles" },
-      { icon: "pack" as const, label: "Pour les négociants et acheteurs", title: "Acheter des produits triés", text: "Si vous recherchez des textiles triés selon vos exigences, nous préparons des assortiments par article, qualité, saison et marché cible pour la distribution internationale.", bullets: ["Listes d’articles spécifiques au client", "Critères de qualité et de saison", "Préparation pour les marchés internationaux"], button: "Demander des produits triés" },
+      { icon: "truck" as const, label: "Pour les collecteurs et fournisseurs", title: "Proposer des textiles bruts", text: "Si vous collectez des textiles usagés et recherchez un acheteur fiable, TexGrade est votre interlocuteur direct. Nous convenons personnellement des détails et nous réjouissons de votre premier contact.", bullets: ["Interlocuteur commercial direct", "Accord sur les volumes et la livraison"], button: "Proposer des textiles" },
+      { icon: "pack" as const, label: "Pour les négociants et acheteurs", title: "Acheter des produits triés", text: "Si vous recherchez des textiles triés selon vos exigences, nous préparons des assortiments par article, qualité, saison et marché cible pour la distribution nationale et internationale.", bullets: ["Listes d’articles spécifiques au client", "Critères de qualité et de saison", "Livraison flexible selon vos besoins"], button: "Demander des produits triés" },
     ],
     contactLabel: "Interlocuteur direct",
     contactText: "Discutez directement avec Reinhold Thate des matières brutes, des assortiments finis et des prochaines étapes.",
     call: "Appeler le +49 171 470 62 60",
-    processEyebrow: "Notre processus",
-    processTitle: "De la réception aux catégories prêtes à expédier.",
-    processIntro: "Plus de 7,5 millions de kilogrammes de textiles usagés collectés dans la région suivent ce processus chaque année.",
-    steps: [
-      { icon: "truck" as const, title: "Réception & préparation", text: "Les textiles usagés collectés dans la région sont réceptionnés et préparés pour le processus de tri." },
-      { icon: "sort" as const, title: "Tri manuel", text: "Des équipes expérimentées évaluent chaque pièce selon l’article, la qualité, la saison et les spécifications convenues." },
-      { icon: "grade" as const, title: "Classement selon la commande", text: "Les produits réutilisables sont regroupés selon les besoins du client et du marché cible." },
-      { icon: "pack" as const, title: "Conditionnement & préparation", text: "Les catégories terminées sont organisées et emballées pour la suite du transport." },
-      { icon: "recycle" as const, title: "Flux de recyclage", text: "Les textiles qui ne peuvent plus être réutilisés sont orientés vers la valorisation matière." },
-    ],
     qualityEyebrow: "Qualité du tri",
-    qualityTitle: "L’article et le niveau de qualité sont évalués séparément.",
+    qualityTitle: "Un tri manuel minutieux réalisé par des spécialistes expérimentés.",
+    qualityIntro: "Nos trieuses et trieurs contrôlent chaque textile individuellement à la main. Grâce à leur expérience, ils évaluent le type d’article, l’état, la qualité et la saison, puis attribuent chaque pièce à la catégorie de produit correspondante. Nous obtenons ainsi des assortiments fiables, précisément adaptés aux exigences de nos clients.",
     qualityPoints: [
-      ["Contrôle visuel manuel", "Les textiles sont évalués individuellement et affectés à la catégorie convenue."],
-      ["Critères définis", "La qualité, la saison et la structure des articles sont convenues avant le début de la production."],
-      ["Contrôle selon la commande", "L’assortiment final est adapté aux exigences concrètes du client."],
+      ["Tri manuel expérimenté", "Chaque textile est contrôlé individuellement, évalué avec expertise et attribué à la catégorie appropriée selon ses caractéristiques."],
+      ["Critères définis", "La qualité, la saison et la structure des articles sont convenues ensemble avant le début de la production."],
+      ["Contrôle selon la commande", "La composition finale est basée sur les spécifications concrètes du client."],
     ],
-    structureEyebrow: "Structure de produit flexible",
-    structureTitle: "Des assortiments adaptés au marché et à la demande.",
-    structureIntro: "La liste exacte des articles est convenue avec chaque client. Les principaux critères de tri sont :",
-    categories: [
-      { title: "Par article", items: ["Hauts", "Pantalons & denim", "Shorts", "Autres catégories de vêtements"] },
-      { title: "Par saison", items: ["Vêtements d’été", "Assortiments de mi-saison", "Vêtements d’hiver", "Combinaisons selon le marché"] },
-      { title: "Par spécification", items: ["Niveaux de qualité", "Listes d’articles du client", "Mélanges selon la commande", "Exigences de conditionnement"] },
-    ],
+    structureEyebrow: "Assortiments individuels",
+    structureTitle: "Composés pour votre marché.",
+    structureIntro: "À partir de nombreux articles et niveaux de qualité, nous composons le tri adapté à vos besoins.",
+    structureDimensions: "Article · Qualité · Saison · Conditionnement",
     ctaEyebrow: "Pour les clients et fournisseurs",
     ctaTitle: "Parlons des catégories, des volumes, du marché cible ou de la livraison.",
     ctaButton: "Contacter Reinhold Thate",
@@ -156,27 +117,9 @@ export function ServicesPage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="section soft-section">
-        <div className="shell">
-          <div className="section-heading split-heading">
-            <div><span className="eyebrow">{copy.processEyebrow}</span><h2>{copy.processTitle}</h2></div>
-            <p>{copy.processIntro}</p>
-          </div>
-          <div className="process-list">
-            {copy.steps.map((step, index) => (
-              <article className="process-step" key={step.title}>
-                <div className="process-index">{String(index + 1).padStart(2, "0")}</div>
-                <div className="process-icon"><Icon name={step.icon} /></div>
-                <div><h2>{step.title}</h2><p>{step.text}</p></div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="quality-band">
         <div className="shell quality-grid">
-          <div className="quality-intro"><span className="eyebrow light">{copy.qualityEyebrow}</span><h2>{copy.qualityTitle}</h2></div>
+          <div className="quality-intro"><span className="eyebrow light">{copy.qualityEyebrow}</span><h2>{copy.qualityTitle}</h2><p>{copy.qualityIntro}</p></div>
           <div className="quality-points">
             {copy.qualityPoints.map(([title, text], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}
           </div>
@@ -186,9 +129,7 @@ export function ServicesPage({ locale }: { locale: Locale }) {
       <section className="section soft-section">
         <div className="shell">
           <div className="section-heading"><span className="eyebrow">{copy.structureEyebrow}</span><h2>{copy.structureTitle}</h2><p>{copy.structureIntro}</p></div>
-          <div className="category-grid">
-            {copy.categories.map((group) => <article className="category-card" key={group.title}><h3>{group.title}</h3><ul>{group.items.map((item) => <li key={item}>{item}</li>)}</ul></article>)}
-          </div>
+          <p className="assortment-dimensions">{copy.structureDimensions}</p>
         </div>
       </section>
 

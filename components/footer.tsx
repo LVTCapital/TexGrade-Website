@@ -7,7 +7,7 @@ const copy = {
   en: {
     description: "Carefully sorted second-hand textiles for international business customers.",
     company: "Company",
-    services: "Services",
+    services: "Purchasing & Sales",
     about: "About TexGrade",
     contact: "Contact",
     legal: "Legal",
@@ -20,7 +20,7 @@ const copy = {
   de: {
     description: "Sorgfältig sortierte Secondhand-Textilien für internationale Geschäftskunden.",
     company: "Unternehmen",
-    services: "Leistungen",
+    services: "Ankauf & Verkauf",
     about: "Über TexGrade",
     contact: "Kontakt",
     legal: "Rechtliches",
@@ -33,7 +33,7 @@ const copy = {
   fr: {
     description: "Des textiles de seconde main soigneusement triés pour les professionnels internationaux.",
     company: "Entreprise",
-    services: "Services",
+    services: "Achat & Vente",
     about: "À propos de TexGrade",
     contact: "Contact",
     legal: "Informations légales",
