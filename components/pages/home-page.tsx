@@ -45,6 +45,7 @@ const content = {
     contactText: "Speak directly with Reinhold Thate about volumes, specifications and the next steps.",
     callButton: "Call now",
     contactButton: "Contact details",
+    warehouseImageLabel: "View inside the TexGrade warehouse",
   },
   de: {
     heroEyebrow: "Textilsortierung · Internationaler Handel",
@@ -86,6 +87,7 @@ const content = {
     contactText: "Sprechen Sie mit Reinhold Thate direkt über Mengen, Spezifikationen und die nächsten Schritte.",
     callButton: "Jetzt anrufen",
     contactButton: "Kontaktdaten",
+    warehouseImageLabel: "Einblick in das TexGrade-Lager",
   },
   fr: {
     heroEyebrow: "Tri textile · Commerce international",
@@ -127,6 +129,7 @@ const content = {
     contactText: "Échangez directement avec Reinhold Thate au sujet des volumes, des spécifications et des prochaines étapes.",
     callButton: "Appeler maintenant",
     contactButton: "Coordonnées",
+    warehouseImageLabel: "Vue de l’entrepôt TexGrade",
   },
 } as const;
 
@@ -173,6 +176,8 @@ export function HomePage({ locale }: { locale: Locale }) {
           </div>
         </div>
       </section>
+
+      <section className="photo-window home-photo-window" role="img" aria-label={copy.warehouseImageLabel} />
 
       <section className="section mission-section">
         <div className="shell mission-grid">

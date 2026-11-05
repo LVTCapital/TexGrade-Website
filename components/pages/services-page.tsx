@@ -30,6 +30,7 @@ const content = {
     ctaEyebrow: "For customers and suppliers",
     ctaTitle: "Let us discuss categories, volumes, target market or delivery.",
     ctaButton: "Contact Reinhold Thate",
+    warehouseImageLabel: "Packed goods in the TexGrade warehouse",
   },
   de: {
     eyebrow: "Ankauf & Verkauf",
@@ -57,6 +58,7 @@ const content = {
     ctaEyebrow: "Für Kunden und Lieferanten",
     ctaTitle: "Lassen Sie uns Kategorien, Mengen, Zielmarkt oder Anlieferung besprechen.",
     ctaButton: "Reinhold Thate kontaktieren",
+    warehouseImageLabel: "Verpackte Ware im TexGrade-Lager",
   },
   fr: {
     eyebrow: "Achat & Vente",
@@ -84,6 +86,7 @@ const content = {
     ctaEyebrow: "Pour les clients et fournisseurs",
     ctaTitle: "Parlons des catégories, des volumes, du marché cible ou de la livraison.",
     ctaButton: "Contacter Reinhold Thate",
+    warehouseImageLabel: "Marchandises emballées dans l’entrepôt TexGrade",
   },
 } as const;
 
@@ -93,7 +96,7 @@ export function ServicesPage({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <section className="page-hero">
+      <section className="page-hero services-photo-hero">
         <div className="shell narrow-left"><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div>
       </section>
 
@@ -116,6 +119,8 @@ export function ServicesPage({ locale }: { locale: Locale }) {
           </div>
         </div>
       </section>
+
+      <section className="photo-window services-photo-window" role="img" aria-label={copy.warehouseImageLabel} />
 
       <section className="quality-band">
         <div className="shell quality-grid">

@@ -1,4 +1,5 @@
 import type { Locale } from "@/lib/i18n";
+import { WarehouseCarousel } from "@/components/warehouse-carousel";
 
 const content = {
   de: {
@@ -18,6 +19,10 @@ const content = {
       ["Entscheidungen aus Erfahrung", "Unsere langjährige Branchen- und Marktkenntnis prägt unsere tägliche Arbeit und den Umgang mit unterschiedlichen Kundenanforderungen."],
       ["Partnerschaften auf Dauer", "Wir setzen auf faire Zusammenarbeit und Geschäftsbeziehungen, die über den einzelnen Auftrag hinausgehen."],
     ],
+    galleryLabel: "Einblicke in das TexGrade-Lager",
+    galleryImageAlt: "TexGrade-Lager",
+    galleryPrevious: "Vorherige Bilder",
+    galleryNext: "Nächste Bilder",
   },
   en: {
     eyebrow: "Company",
@@ -36,6 +41,10 @@ const content = {
       ["Decisions based on experience", "Our many years of industry and market knowledge shape our daily work and how we handle different customer requirements."],
       ["Long-term partnerships", "We are committed to fair cooperation and business relationships that extend beyond individual orders."],
     ],
+    galleryLabel: "Views inside the TexGrade warehouse",
+    galleryImageAlt: "TexGrade warehouse",
+    galleryPrevious: "Previous images",
+    galleryNext: "Next images",
   },
   fr: {
     eyebrow: "Entreprise",
@@ -54,6 +63,10 @@ const content = {
       ["Des décisions fondées sur l’expérience", "Nos nombreuses années de connaissance du secteur et du marché façonnent notre travail quotidien et notre manière de répondre aux différentes exigences de nos clients."],
       ["Des partenariats durables", "Nous misons sur une collaboration équitable et sur des relations commerciales qui vont au-delà d’une seule commande."],
     ],
+    galleryLabel: "Vues de l’entrepôt TexGrade",
+    galleryImageAlt: "Entrepôt TexGrade",
+    galleryPrevious: "Images précédentes",
+    galleryNext: "Images suivantes",
   },
 } as const;
 
@@ -70,6 +83,17 @@ export function CompanyPage({ locale }: { locale: Locale }) {
         <div className="shell story-grid">
           <div className="story-title"><span className="eyebrow">{copy.storyEyebrow}</span><h2>{copy.storyTitle}</h2></div>
           <div className="story-copy">{copy.story.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+        </div>
+      </section>
+
+      <section className="company-gallery-section">
+        <div className="shell">
+          <WarehouseCarousel
+            ariaLabel={copy.galleryLabel}
+            imageAlt={copy.galleryImageAlt}
+            previousLabel={copy.galleryPrevious}
+            nextLabel={copy.galleryNext}
+          />
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import type { Locale } from "@/lib/i18n";
+import Image from "next/image";
 
 const content = {
   de: {
@@ -17,6 +18,7 @@ const content = {
     supplier: "Für Lieferanten",
     supplierTitle: "Altkleider anliefern",
     supplierText: "Lieferanten regional erfasster Altkleider können Mengen, Qualität, Abholung oder Anlieferung direkt mit uns abstimmen.",
+    imageAlt: "Warenkorb im TexGrade-Lager",
   },
   en: {
     eyebrow: "Contact",
@@ -34,6 +36,7 @@ const content = {
     supplier: "For suppliers",
     supplierTitle: "Supply used textiles",
     supplierText: "Suppliers of regionally collected used textiles can coordinate volumes, quality, collection or delivery directly with us.",
+    imageAlt: "Goods trolley in the TexGrade warehouse",
   },
   fr: {
     eyebrow: "Contact",
@@ -51,6 +54,7 @@ const content = {
     supplier: "Pour les fournisseurs",
     supplierTitle: "Proposer des textiles usagés",
     supplierText: "Les fournisseurs de textiles usagés collectés dans la région peuvent convenir directement avec nous des volumes, de la qualité, de l’enlèvement ou de la livraison.",
+    imageAlt: "Chariot de marchandises dans l’entrepôt TexGrade",
   },
 } as const;
 
@@ -74,6 +78,9 @@ export function ContactPage({ locale }: { locale: Locale }) {
             <a className="button primary" href="tel:+491714706260">{copy.call}</a>
           </div>
           <div className="contact-audience">
+            <div className="contact-image-panel">
+              <Image src="/images/warehouse/contact-visual.webp" alt={copy.imageAlt} fill sizes="(max-width: 980px) 100vw, 55vw" />
+            </div>
             <article className="audience-card"><span>{copy.customer}</span><h2>{copy.customerTitle}</h2><p>{copy.customerText}</p></article>
             <article className="audience-card"><span>{copy.supplier}</span><h2>{copy.supplierTitle}</h2><p>{copy.supplierText}</p></article>
           </div>
