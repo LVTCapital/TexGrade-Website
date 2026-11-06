@@ -1,53 +1,77 @@
+import Link from "next/link";
+import { company } from "@/lib/company";
+import { siteRoutes } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 
 const legalCopy = {
-  en: {
-    eyebrow: "Legal",
-    title: "Legal notice",
-    noticeTitle: "Draft for the private preview",
-    noticeText: "The information is based on the current TexGrade letterhead. Before public release, it will be reviewed again and supplemented with the relevant tax information.",
-    provider: "Provider",
-    providerText: <>TexGrade GmbH &amp; Co. KG<br />Bismarckstraße 30<br />49324 Melle<br />Germany</>,
-    representation: "Representation",
-    representationText: "Registered office in Düsseldorf. Represented by its personally liable partner, TexGrade Beteiligungs-GmbH, registered office in Düsseldorf. Managing Director: Reinhold Thate.",
-    register: "Commercial register",
-    registerText: <>TexGrade GmbH &amp; Co. KG: Düsseldorf Local Court, HRA 28754.<br />TexGrade Beteiligungs-GmbH: Düsseldorf Local Court, HRB 113801.</>,
-    contact: "Contact",
-    contactText: <>Contact: Reinhold Thate<br />Telephone: +49 171 470 62 60<br />A business email address will be added before the website is made public.</>,
-    tax: "Tax information",
-    taxText: "The VAT identification number will be added once issued.",
-  },
   de: {
     eyebrow: "Rechtliches",
     title: "Impressum",
-    noticeTitle: "Entwurf für die private Vorschau",
-    noticeText: "Die Angaben stammen aus dem aktuellen TexGrade-Briefbogen. Vor der öffentlichen Veröffentlichung werden sie noch einmal rechtlich geprüft und um die steuerlichen Angaben ergänzt.",
-    provider: "Anbieter",
-    providerText: <>TexGrade GmbH &amp; Co. KG<br />Bismarckstraße 30<br />49324 Melle<br />Deutschland</>,
-    representation: "Vertretung",
-    representationText: "Sitz Düsseldorf. Vertreten durch die persönlich haftende Gesellschafterin TexGrade Beteiligungs-GmbH, Sitz Düsseldorf. Geschäftsführer: Reinhold Thate.",
-    register: "Registerangaben",
-    registerText: <>TexGrade GmbH &amp; Co. KG: Amtsgericht Düsseldorf, HRA 28754.<br />TexGrade Beteiligungs-GmbH: Amtsgericht Düsseldorf, HRB 113801.</>,
+    basis: "Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)",
+    translationNote: null,
+    provider: "Diensteanbieter",
+    country: "Deutschland",
+    registeredOffice: "Sitz der Gesellschaft",
+    register: "Registergericht",
+    registerNumber: "Registernummer",
+    partner: "Persönlich haftende Gesellschafterin",
+    managingDirectors: "Geschäftsführer",
     contact: "Kontakt",
-    contactText: <>Ansprechpartner: Reinhold Thate<br />Telefon: +49 171 470 62 60<br />Eine geschäftliche E-Mail-Adresse wird vor der öffentlichen Freischaltung ergänzt.</>,
+    phone: "Telefon",
+    email: "E-Mail",
     tax: "Steuerliche Angaben",
-    taxText: "Die Umsatzsteuer-Identifikationsnummer wird nach Zuteilung ergänzt.",
+    vatId: "Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG",
+    economicId: "Wirtschafts-Identifikationsnummer gemäß § 139c AO",
+    responsible: "Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV",
+    sameAddress: "Anschrift wie oben",
+    dispute: "Verbraucherstreitbeilegung",
+    disputeText: "Unser Angebot richtet sich ausschließlich an Unternehmer. Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+  },
+  en: {
+    eyebrow: "Legal",
+    title: "Legal notice",
+    basis: "Information pursuant to Section 5 of the German Digital Services Act (DDG)",
+    translationNote: "This is a translation provided for convenience. Only the German version is legally binding.",
+    provider: "Service provider",
+    country: "Germany",
+    registeredOffice: "Registered office",
+    register: "Register court",
+    registerNumber: "Register number",
+    partner: "General partner (personally liable)",
+    managingDirectors: "Managing director",
+    contact: "Contact",
+    phone: "Telephone",
+    email: "Email",
+    tax: "Tax information",
+    vatId: "VAT identification number pursuant to Section 27a of the German VAT Act (UStG)",
+    economicId: "Business identification number pursuant to Section 139c of the German Fiscal Code (AO)",
+    responsible: "Responsible for content pursuant to Section 18 (2) of the German State Media Treaty (MStV)",
+    sameAddress: "Address as above",
+    dispute: "Consumer dispute resolution",
+    disputeText: "Our services are directed exclusively at businesses. We are neither obliged nor willing to participate in dispute resolution proceedings before a consumer arbitration board.",
   },
   fr: {
     eyebrow: "Informations légales",
     title: "Mentions légales",
-    noticeTitle: "Projet pour l’aperçu privé",
-    noticeText: "Ces informations sont basées sur le papier à en-tête actuel de TexGrade. Avant la mise en ligne publique, elles seront à nouveau vérifiées et complétées par les informations fiscales nécessaires.",
-    provider: "Éditeur",
-    providerText: <>TexGrade GmbH &amp; Co. KG<br />Bismarckstraße 30<br />49324 Melle<br />Allemagne</>,
-    representation: "Représentation",
-    representationText: "Siège social à Düsseldorf. Représentée par son associée personnellement responsable, TexGrade Beteiligungs-GmbH, dont le siège est à Düsseldorf. Gérant : Reinhold Thate.",
-    register: "Registre du commerce",
-    registerText: <>TexGrade GmbH &amp; Co. KG : tribunal d’instance de Düsseldorf, HRA 28754.<br />TexGrade Beteiligungs-GmbH : tribunal d’instance de Düsseldorf, HRB 113801.</>,
+    basis: "Informations conformément à l’article 5 de la loi allemande sur les services numériques (DDG)",
+    translationNote: "Cette traduction est fournie à titre indicatif. Seule la version allemande fait foi.",
+    provider: "Prestataire",
+    country: "Allemagne",
+    registeredOffice: "Siège social",
+    register: "Tribunal d’enregistrement",
+    registerNumber: "Numéro d’immatriculation",
+    partner: "Associée commanditée (indéfiniment responsable)",
+    managingDirectors: "Gérant",
     contact: "Contact",
-    contactText: <>Interlocuteur : Reinhold Thate<br />Téléphone : +49 171 470 62 60<br />Une adresse e-mail professionnelle sera ajoutée avant la mise en ligne publique.</>,
+    phone: "Téléphone",
+    email: "E-mail",
     tax: "Informations fiscales",
-    taxText: "Le numéro d’identification à la TVA sera ajouté dès qu’il aura été attribué.",
+    vatId: "Numéro d’identification à la TVA selon l’article 27a de la loi allemande sur la TVA (UStG)",
+    economicId: "Numéro d’identification économique selon l’article 139c du code fiscal allemand (AO)",
+    responsible: "Responsable du contenu selon l’article 18, alinéa 2 du traité inter-États allemand sur les médias (MStV)",
+    sameAddress: "Adresse indiquée ci-dessus",
+    dispute: "Règlement des litiges de consommation",
+    disputeText: "Notre offre s’adresse exclusivement aux professionnels. Nous ne sommes ni tenus ni disposés à participer à une procédure de règlement des litiges devant un organisme de médiation de la consommation.",
   },
 } as const;
 
@@ -86,18 +110,75 @@ const privacyCopy = {
 
 export function LegalNoticePage({ locale }: { locale: Locale }) {
   const copy = legalCopy[locale];
+  const partner = company.generalPartner;
 
   return (
     <section className="legal-page section">
       <div className="shell legal-content">
         <span className="eyebrow">{copy.eyebrow}</span>
         <h1>{copy.title}</h1>
-        <div className="draft-notice"><strong>{copy.noticeTitle}</strong><p>{copy.noticeText}</p></div>
-        <h2>{copy.provider}</h2><p>{copy.providerText}</p>
-        <h2>{copy.representation}</h2><p>{copy.representationText}</p>
-        <h2>{copy.register}</h2><p>{copy.registerText}</p>
-        <h2>{copy.contact}</h2><p>{copy.contactText}</p>
-        <h2>{copy.tax}</h2><p>{copy.taxText}</p>
+        <p className="legal-lead">{copy.basis}</p>
+        {copy.translationNote && (
+          <p className="legal-note">
+            {copy.translationNote} <Link href={siteRoutes.de.legal} hrefLang="de" lang="de">Impressum (Deutsch)</Link>
+          </p>
+        )}
+
+        <div className="legal-grid">
+          <section className="legal-card legal-card-wide">
+            <h2>{copy.provider}</h2>
+            <address>
+              <strong>{company.name}</strong><br />
+              {company.street}<br />
+              {company.postalCode} {company.city}<br />
+              {copy.country}
+            </address>
+            <dl>
+              <div><dt>{copy.registeredOffice}</dt><dd>{company.registeredOffice}</dd></div>
+              <div><dt>{copy.register}</dt><dd>{company.registerCourt}</dd></div>
+              <div><dt>{copy.registerNumber}</dt><dd>{company.registerNumber}</dd></div>
+            </dl>
+          </section>
+
+          <section className="legal-card legal-card-wide">
+            <h2>{copy.partner}</h2>
+            <p><strong>{partner.name}</strong></p>
+            <dl>
+              <div><dt>{copy.registeredOffice}</dt><dd>{partner.registeredOffice}</dd></div>
+              <div><dt>{copy.register}</dt><dd>{partner.registerCourt}</dd></div>
+              <div><dt>{copy.registerNumber}</dt><dd>{partner.registerNumber}</dd></div>
+              <div><dt>{copy.managingDirectors}</dt><dd>{partner.managingDirectors.join(", ")}</dd></div>
+            </dl>
+          </section>
+
+          <section className="legal-card">
+            <h2>{copy.contact}</h2>
+            <dl>
+              <div><dt>{copy.phone}</dt><dd><a href={company.phone.href}>{company.phone.display}</a></dd></div>
+              <div><dt>{copy.email}</dt><dd><a href={`mailto:${company.email}`}>{company.email}</a></dd></div>
+            </dl>
+          </section>
+
+          <section className="legal-card">
+            <h2>{copy.responsible}</h2>
+            <p>{company.contentResponsible}<br />{copy.sameAddress}</p>
+          </section>
+
+          {(company.vatId || company.economicId) && (
+            <section className="legal-card legal-card-wide">
+              <h2>{copy.tax}</h2>
+              <dl>
+                {company.vatId && <div><dt>{copy.vatId}</dt><dd>{company.vatId}</dd></div>}
+                {company.economicId && <div><dt>{copy.economicId}</dt><dd>{company.economicId}</dd></div>}
+              </dl>
+            </section>
+          )}
+
+          <section className="legal-card legal-card-wide">
+            <h2>{copy.dispute}</h2>
+            <p>{copy.disputeText}</p>
+          </section>
+        </div>
       </div>
     </section>
   );
