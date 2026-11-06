@@ -24,3 +24,6 @@ pnpm-debug.log*
 
 # Fly.io local state
 .fly/
+
+# TypeScript
+*.tsbuildinfo

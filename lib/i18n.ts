@@ -1,5 +1,7 @@
 export type Locale = "en" | "de" | "fr";
 
+export const siteUrl = "https://texgrade.com";
+
 export const siteRoutes = {
   en: {
     home: "/",
