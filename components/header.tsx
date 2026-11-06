@@ -48,10 +48,10 @@ const copy = {
   },
 } as const;
 
-const languages: Array<{ locale: Locale; code: string; flag: string; label: string }> = [
-  { locale: "en", code: "EN", flag: "🇬🇧", label: "English" },
-  { locale: "de", code: "DE", flag: "🇩🇪", label: "Deutsch" },
-  { locale: "fr", code: "FR", flag: "🇫🇷", label: "Français" },
+const languages: Array<{ locale: Locale; code: string; label: string }> = [
+  { locale: "en", code: "EN", label: "English" },
+  { locale: "de", code: "DE", label: "Deutsch" },
+  { locale: "fr", code: "FR", label: "Français" },
 ];
 
 export function Header({ locale }: { locale: Locale }) {
@@ -96,8 +96,7 @@ export function Header({ locale }: { locale: Locale }) {
                 aria-current={locale === language.locale ? "page" : undefined}
                 onClick={() => setOpen(false)}
               >
-                <span aria-hidden="true">{language.flag}</span>
-                <span>{language.code}</span>
+                {language.code}
               </Link>
             ))}
           </div>

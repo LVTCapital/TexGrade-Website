@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "../globals.css";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { fontClassName } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://texgrade.com"),
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function EnglishRootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={fontClassName}>
       <body>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <Header locale="en" />

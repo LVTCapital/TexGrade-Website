@@ -1,4 +1,5 @@
 import type { Locale } from "@/lib/i18n";
+import { PageHero } from "@/components/page-hero";
 import { WarehouseCarousel } from "@/components/warehouse-carousel";
 
 const content = {
@@ -21,6 +22,7 @@ const content = {
     ],
     galleryLabel: "Einblicke in das TexGrade-Lager",
     galleryImageAlt: "TexGrade-Lager",
+    heroImageAlt: "Produktionshalle von TexGrade in Melle",
     galleryPrevious: "Vorherige Bilder",
     galleryNext: "Nächste Bilder",
   },
@@ -43,6 +45,7 @@ const content = {
     ],
     galleryLabel: "Views inside the TexGrade warehouse",
     galleryImageAlt: "TexGrade warehouse",
+    heroImageAlt: "TexGrade production hall in Melle",
     galleryPrevious: "Previous images",
     galleryNext: "Next images",
   },
@@ -65,6 +68,7 @@ const content = {
     ],
     galleryLabel: "Vues de l’entrepôt TexGrade",
     galleryImageAlt: "Entrepôt TexGrade",
+    heroImageAlt: "Hall de production de TexGrade à Melle",
     galleryPrevious: "Images précédentes",
     galleryNext: "Images suivantes",
   },
@@ -75,12 +79,10 @@ export function CompanyPage({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <section className="page-hero company-hero">
-        <div className="shell narrow-left"><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div>
-      </section>
+      <PageHero eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro} image={{ src: "/images/warehouse/company-03.webp", alt: copy.heroImageAlt, position: "center 40%" }} />
 
       <section className="section">
-        <div className="shell story-grid">
+        <div className="shell story-grid reveal">
           <div className="story-title"><span className="eyebrow">{copy.storyEyebrow}</span><h2>{copy.storyTitle}</h2></div>
           <div className="story-copy">{copy.story.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
         </div>
@@ -100,7 +102,7 @@ export function CompanyPage({ locale }: { locale: Locale }) {
       <section className="section dark-section values-section">
         <div className="shell">
           <div className="section-heading light-heading"><span className="eyebrow light">{copy.valuesEyebrow}</span><h2>{copy.valuesTitle}</h2></div>
-          <div className="values-grid">
+          <div className="values-grid reveal">
             {copy.values.map(([title, text], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}
           </div>
         </div>

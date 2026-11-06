@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HeroVisual } from "@/components/hero-visual";
+import Image from "next/image";
 import { Icon } from "@/components/icon";
 import type { Locale } from "@/lib/i18n";
 import { siteRoutes } from "@/lib/i18n";
@@ -12,7 +12,7 @@ const content = {
     servicesButton: "View service",
     contactLink: "Contact us",
     factsLabel: "TexGrade at a glance",
-    facts: [["7.5+ million kg", "Textiles sorted every year"], ["30+ years", "Experience in the market"], ["Regions", "Germany, Europe, worldwide"]],
+    facts: [["7.5+ million kg", "Textiles sorted every year"], ["30+ years", "Experience in the market"], ["Worldwide", "Customers in Germany, Europe and beyond"]],
     audienceEyebrow: "For suppliers and buyers",
     audienceTitle: "Two ways to work together. One reliable partner.",
     audienceIntro: "Whether you want to supply collected textiles or purchase finished assortments, we discuss your requirements directly and personally.",
@@ -45,7 +45,10 @@ const content = {
     contactText: "Speak directly with Reinhold Thate about volumes, specifications and the next steps.",
     callButton: "Call now",
     contactButton: "Contact details",
-    warehouseImageLabel: "View inside the TexGrade warehouse",
+    heroImageAlt: "Sorted and packed textiles in the TexGrade warehouse in Melle",
+    galleryEyebrow: "Inside TexGrade",
+    galleryTitle: "Where textiles get their second life.",
+    galleryAlts: ["Production hall in the TexGrade warehouse", "Stacked textile bales ready for shipment", "Strapped bale of sorted textiles"],
   },
   de: {
     heroEyebrow: "Textilsortierung · Internationaler Handel",
@@ -54,7 +57,7 @@ const content = {
     servicesButton: "Service ansehen",
     contactLink: "Kontakt aufnehmen",
     factsLabel: "TexGrade auf einen Blick",
-    facts: [["7,5+ Mio. kg", "Sortierte Textilien pro Jahr"], ["30+ Jahre", "Erfahrung im Markt"], ["Regionen", "Deutschland, Europa, weltweit"]],
+    facts: [["7,5+ Mio. kg", "Sortierte Textilien pro Jahr"], ["30+ Jahre", "Erfahrung im Markt"], ["Weltweit", "Kunden in Deutschland, Europa und darüber hinaus"]],
     audienceEyebrow: "Für Lieferanten und Abnehmer",
     audienceTitle: "Zwei Wege zur Zusammenarbeit. Ein verlässlicher Partner.",
     audienceIntro: "Ob Sie erfasste Alttextilien anbieten oder fertige Sortimente beziehen möchten: Wir stimmen die Anforderungen direkt und persönlich mit Ihnen ab.",
@@ -87,7 +90,10 @@ const content = {
     contactText: "Sprechen Sie mit Reinhold Thate direkt über Mengen, Spezifikationen und die nächsten Schritte.",
     callButton: "Jetzt anrufen",
     contactButton: "Kontaktdaten",
-    warehouseImageLabel: "Einblick in das TexGrade-Lager",
+    heroImageAlt: "Sortierte und verpackte Textilien im TexGrade-Lager in Melle",
+    galleryEyebrow: "Einblick in TexGrade",
+    galleryTitle: "Wo Textilien ihr zweites Leben beginnen.",
+    galleryAlts: ["Produktionshalle im TexGrade-Lager", "Gestapelte Textilballen für den Versand", "Verschnürter Ballen sortierter Textilien"],
   },
   fr: {
     heroEyebrow: "Tri textile · Commerce international",
@@ -96,7 +102,7 @@ const content = {
     servicesButton: "Voir le service",
     contactLink: "Nous contacter",
     factsLabel: "TexGrade en bref",
-    facts: [["7,5+ millions de kg", "Textiles triés chaque année"], ["30+ ans", "D’expérience sur le marché"], ["Régions", "Allemagne, Europe, monde entier"]],
+    facts: [["7,5+ millions de kg", "Textiles triés chaque année"], ["30+ ans", "D’expérience sur le marché"], ["International", "Clients en Allemagne, en Europe et au-delà"]],
     audienceEyebrow: "Pour les fournisseurs et les acheteurs",
     audienceTitle: "Deux façons de collaborer. Un partenaire fiable.",
     audienceIntro: "Que vous souhaitiez proposer des textiles collectés ou acheter des assortiments triés, nous étudions directement vos besoins avec vous.",
@@ -129,7 +135,10 @@ const content = {
     contactText: "Échangez directement avec Reinhold Thate au sujet des volumes, des spécifications et des prochaines étapes.",
     callButton: "Appeler maintenant",
     contactButton: "Coordonnées",
-    warehouseImageLabel: "Vue de l’entrepôt TexGrade",
+    heroImageAlt: "Textiles triés et emballés dans l’entrepôt TexGrade à Melle",
+    galleryEyebrow: "Au cœur de TexGrade",
+    galleryTitle: "Là où les textiles commencent leur seconde vie.",
+    galleryAlts: ["Hall de production de l’entrepôt TexGrade", "Balles de textiles empilées prêtes à l’expédition", "Balle de textiles triés cerclée"],
   },
 } as const;
 
@@ -139,31 +148,36 @@ export function HomePage({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <section className="hero">
-        <div className="shell hero-grid">
-          <div className="hero-copy">
-            <span className="eyebrow">{copy.heroEyebrow}</span>
+      <section className="home-hero">
+        <Image className="home-hero-image" src="/images/warehouse/company-02.webp" alt={copy.heroImageAlt} fill priority sizes="100vw" />
+        <div className="shell home-hero-inner">
+          <div className="home-hero-copy">
+            <span className="eyebrow light">{copy.heroEyebrow}</span>
             <h1>{copy.heroTitle}</h1>
             <p>{copy.heroText}</p>
             <div className="hero-actions">
               <Link className="button primary" href={routes.services}>{copy.servicesButton} <Icon name="arrow" /></Link>
-              <Link className="text-link" href={routes.contact}>{copy.contactLink} <Icon name="arrow" /></Link>
-            </div>
-            <div className="hero-facts" aria-label={copy.factsLabel}>
-              {copy.facts.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}
+              <Link className="button glass" href={routes.contact}>{copy.contactLink} <Icon name="arrow" /></Link>
             </div>
           </div>
-          <HeroVisual locale={locale} />
+        </div>
+      </section>
+
+      <section className="stats-band" aria-label={copy.factsLabel}>
+        <div className="shell">
+          <dl className="stats-grid">
+            {copy.facts.map(([value, label]) => <div key={label}><dt>{value}</dt><dd>{label}</dd></div>)}
+          </dl>
         </div>
       </section>
 
       <section className="section audience-section">
         <div className="shell">
-          <div className="section-heading split-heading">
+          <div className="section-heading split-heading reveal">
             <div><span className="eyebrow">{copy.audienceEyebrow}</span><h2>{copy.audienceTitle}</h2></div>
             <p>{copy.audienceIntro}</p>
           </div>
-          <div className="audience-paths">
+          <div className="audience-paths reveal">
             {copy.audiences.map((audience) => (
               <article className="audience-path" key={audience.title}>
                 <div className="audience-path-icon"><Icon name={audience.icon} /></div>
@@ -177,10 +191,21 @@ export function HomePage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="photo-window home-photo-window" role="img" aria-label={copy.warehouseImageLabel} />
+      <section className="section gallery-section">
+        <div className="shell">
+          <div className="section-heading reveal"><span className="eyebrow">{copy.galleryEyebrow}</span><h2>{copy.galleryTitle}</h2></div>
+          <div className="mosaic reveal">
+            {["company-03", "home-hero", "company-05"].map((name, index) => (
+              <figure key={name}>
+                <Image src={`/images/warehouse/${name}.webp`} alt={copy.galleryAlts[index]} fill sizes={index === 0 ? "(max-width: 760px) 100vw, 60vw" : "(max-width: 760px) 50vw, 30vw"} />
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="section mission-section">
-        <div className="shell mission-grid">
+        <div className="shell mission-grid reveal">
           <div><span className="eyebrow light">{copy.missionEyebrow}</span><h2>{copy.missionTitle}</h2></div>
           <div className="mission-copy"><p>{copy.missionText}</p><strong>{copy.missionStatement}</strong></div>
         </div>
@@ -188,11 +213,11 @@ export function HomePage({ locale }: { locale: Locale }) {
 
       <section className="section flow-section">
         <div className="shell">
-          <div className="section-heading split-heading">
+          <div className="section-heading split-heading reveal">
             <div><span className="eyebrow">{copy.flowEyebrow}</span><h2>{copy.flowTitle}</h2></div>
             <p>{copy.flowIntro}</p>
           </div>
-          <div className="textile-flow" aria-label={copy.flowLabel}>
+          <div className="textile-flow reveal" aria-label={copy.flowLabel}>
             {copy.flowSteps.map((step, index) => (
               <article className="flow-step" key={step.title}>
                 <span className="flow-number">0{index + 1}</span>
@@ -202,7 +227,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               </article>
             ))}
           </div>
-          <div className="flow-outcomes">
+          <div className="flow-outcomes reveal">
             <span className="outcomes-label">{copy.outcomesLabel}</span>
             <div className="outcomes-grid">
               {copy.outcomes.map((outcome) => (

@@ -1,5 +1,6 @@
 import type { Locale } from "@/lib/i18n";
 import Image from "next/image";
+import { PageHero } from "@/components/page-hero";
 
 const content = {
   de: {
@@ -63,16 +64,14 @@ export function ContactPage({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <section className="page-hero contact-hero">
-        <div className="shell narrow-left"><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div>
-      </section>
+      <PageHero eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro} />
       <section className="section">
         <div className="shell contact-grid">
           <div className="contact-details">
             <span className="eyebrow">{copy.personEyebrow}</span>
             <h2>Reinhold Thate</h2>
             <p className="contact-role">{copy.role}</p>
-            <a className="contact-phone" href="tel:+491714706260">+49 171 4706260</a>
+            <a className="contact-phone" href="tel:+491714706260">+49 171 470 62 60</a>
             <div className="contact-block"><span>{copy.email}</span><p><a href="mailto:info@texgrade.com">info@texgrade.com</a></p></div>
             <div className="contact-block"><span>{copy.location}</span><p>Bismarckstraße 30<br />49324 Melle<br />{copy.country}</p></div>
             <a className="button primary" href="tel:+491714706260">{copy.call}</a>

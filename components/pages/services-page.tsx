@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { PageHero } from "@/components/page-hero";
 import { Icon } from "@/components/icon";
 import type { Locale } from "@/lib/i18n";
 import { siteRoutes } from "@/lib/i18n";
@@ -31,6 +33,7 @@ const content = {
     ctaTitle: "Let us discuss categories, volumes, target market or delivery.",
     ctaButton: "Contact Reinhold Thate",
     warehouseImageLabel: "Packed goods in the TexGrade warehouse",
+    heroImageAlt: "Bagged textiles ready for sorting at TexGrade",
   },
   de: {
     eyebrow: "Ankauf & Verkauf",
@@ -59,6 +62,7 @@ const content = {
     ctaTitle: "Lassen Sie uns Kategorien, Mengen, Zielmarkt oder Anlieferung besprechen.",
     ctaButton: "Reinhold Thate kontaktieren",
     warehouseImageLabel: "Verpackte Ware im TexGrade-Lager",
+    heroImageAlt: "Abgepackte Textilien vor der Sortierung bei TexGrade",
   },
   fr: {
     eyebrow: "Achat & Vente",
@@ -87,6 +91,7 @@ const content = {
     ctaTitle: "Parlons des catégories, des volumes, du marché cible ou de la livraison.",
     ctaButton: "Contacter Reinhold Thate",
     warehouseImageLabel: "Marchandises emballées dans l’entrepôt TexGrade",
+    heroImageAlt: "Textiles ensachés avant le tri chez TexGrade",
   },
 } as const;
 
@@ -96,13 +101,11 @@ export function ServicesPage({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <section className="page-hero services-photo-hero">
-        <div className="shell narrow-left"><span className="eyebrow">{copy.eyebrow}</span><h1>{copy.title}</h1><p>{copy.intro}</p></div>
-      </section>
+      <PageHero eyebrow={copy.eyebrow} title={copy.title} intro={copy.intro} image={{ src: "/images/warehouse/services-hero.webp", alt: copy.heroImageAlt }} />
 
       <section className="section service-path-section">
         <div className="shell">
-          <div className="service-path-grid">
+          <div className="service-path-grid reveal">
             {copy.pathways.map((pathway) => (
               <article className="service-path-card" key={pathway.title}>
                 <div className="service-path-top"><Icon name={pathway.icon} /><span>{pathway.label}</span></div>
@@ -120,10 +123,16 @@ export function ServicesPage({ locale }: { locale: Locale }) {
         </div>
       </section>
 
-      <section className="photo-window services-photo-window" role="img" aria-label={copy.warehouseImageLabel} />
+      <section className="image-band">
+        <div className="shell">
+          <figure className="image-band-figure reveal">
+            <Image src="/images/warehouse/services-window.webp" alt={copy.warehouseImageLabel} fill sizes="(max-width: 1240px) 100vw, 1180px" />
+          </figure>
+        </div>
+      </section>
 
       <section className="quality-band">
-        <div className="shell quality-grid">
+        <div className="shell quality-grid reveal">
           <div className="quality-intro"><span className="eyebrow light">{copy.qualityEyebrow}</span><h2>{copy.qualityTitle}</h2><p>{copy.qualityIntro}</p></div>
           <div className="quality-points">
             {copy.qualityPoints.map(([title, text], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}
