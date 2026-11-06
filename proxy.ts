@@ -48,5 +48,7 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)"],
+  // Static assets stay public: the image optimizer fetches /images/* internally
+  // without the visitor's Basic Auth header, so protecting them breaks next/image.
+  matcher: ["/((?!_next/static|_next/image|images/|icon.svg|favicon.ico|sitemap.xml|robots.txt).*)"],
 };
