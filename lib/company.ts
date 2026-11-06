@@ -28,4 +28,13 @@ export const company = {
 
   // Person responsible for content (§ 18 Abs. 2 MStV).
   contentResponsible: "Reinhold Thate",
+
+  // Hosting facts used in the privacy policy. Keep in sync with the Render setup
+  // (service region, plan-dependent log retention: Hobby 7 days, Professional 14).
+  hosting: {
+    provider: "Render Services, Inc.",
+    location: "San Francisco, USA",
+    serverRegion: { de: "Frankfurt am Main (Deutschland)", en: "Frankfurt am Main, Germany", fr: "à Francfort-sur-le-Main (Allemagne)" },
+    logRetentionDays: 7,
+  },
 } as const;

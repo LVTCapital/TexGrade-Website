@@ -281,9 +281,16 @@ p { text-wrap: pretty; }
 .legal-card dl > div { display: grid; grid-template-columns: minmax(150px, 34%) 1fr; gap: 16px; padding-top: 10px; border-top: 1px solid var(--line); }
 .legal-card dt { color: var(--muted); font-size: 14px; }
 .legal-card dd { margin: 0; color: var(--ink); }
-.draft-notice { margin: 36px 0; padding: 24px; border: 1px solid rgba(29,111,174,.2); border-radius: var(--radius-md); background: rgba(29,111,174,.06); }
-.draft-notice strong { color: var(--ink); }
-.draft-notice p { margin: 8px 0 0; color: var(--text); }
+.legal-card > p + address { margin-top: 10px; }
+.privacy-sections { margin-top: 56px; }
+.privacy-sections section + section { margin-top: 44px; padding-top: 40px; border-top: 1px solid var(--line); }
+.legal-content .privacy-sections h2 { margin: 0 0 16px; font-size: 24px; }
+.privacy-sections p, .privacy-sections li { color: var(--text); line-height: 1.75; }
+.privacy-sections ul { margin: 0 0 16px; padding: 0; list-style: none; }
+.privacy-sections li { position: relative; padding: 6px 0 6px 26px; }
+.privacy-sections li::before { content: ""; position: absolute; left: 4px; top: 17px; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
+.legal-content .privacy-highlight { padding: 20px 22px; border-left: 3px solid var(--blue); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; color: var(--ink); background: rgba(29,111,174,.06); font-weight: 500; }
+.legal-updated { margin-top: 56px; font-size: 14px; }
 
 /* ---------- Footer ---------- */
 .site-footer { padding: 80px 0 0; color: rgba(255,255,255,.7); background: var(--navy); }

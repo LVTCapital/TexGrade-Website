@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { company } from "@/lib/company";
 import { siteRoutes } from "@/lib/i18n";
+import { privacyContent, type PrivacySection } from "@/components/pages/privacy-content";
 import type { Locale } from "@/lib/i18n";
 
 const legalCopy = {
@@ -72,39 +73,6 @@ const legalCopy = {
     sameAddress: "Adresse indiquée ci-dessus",
     dispute: "Règlement des litiges de consommation",
     disputeText: "Notre offre s’adresse exclusivement aux professionnels. Nous ne sommes ni tenus ni disposés à participer à une procédure de règlement des litiges devant un organisme de médiation de la consommation.",
-  },
-} as const;
-
-const privacyCopy = {
-  en: {
-    eyebrow: "Legal",
-    title: "Privacy",
-    noticeTitle: "Draft for the private preview",
-    noticeText: "This page is not yet a legally reviewed privacy policy and must not be published in its current form.",
-    statusTitle: "Technical status of the preview",
-    statusText: "The current version does not use analytics or marketing cookies. No information is collected through a contact form; contact is made directly by telephone.",
-    hostingTitle: "Hosting",
-    hostingText: "The final information about the hosting provider and the processing of technical access data will be added after the deployment setup has been completed.",
-  },
-  de: {
-    eyebrow: "Rechtliches",
-    title: "Datenschutz",
-    noticeTitle: "Entwurf für die private Vorschau",
-    noticeText: "Diese Seite ist noch keine abschließend geprüfte Datenschutzerklärung und darf so nicht öffentlich veröffentlicht werden.",
-    statusTitle: "Technischer Stand der Vorschau",
-    statusText: "Die Website setzt in der aktuellen Version keine Analyse- oder Marketing-Cookies ein. Es werden keine Angaben über ein Kontaktformular erfasst; die Kontaktaufnahme erfolgt direkt per Telefon.",
-    hostingTitle: "Hosting",
-    hostingText: "Die finalen Angaben zum Hostinganbieter und zur Verarbeitung technischer Zugriffsdaten werden nach Abschluss der Bereitstellung ergänzt.",
-  },
-  fr: {
-    eyebrow: "Informations légales",
-    title: "Confidentialité",
-    noticeTitle: "Projet pour l’aperçu privé",
-    noticeText: "Cette page ne constitue pas encore une politique de confidentialité juridiquement vérifiée et ne doit pas être publiée dans sa forme actuelle.",
-    statusTitle: "État technique de l’aperçu",
-    statusText: "La version actuelle du site n’utilise aucun cookie d’analyse ou de marketing. Aucune donnée n’est recueillie par un formulaire de contact ; la prise de contact s’effectue directement par téléphone.",
-    hostingTitle: "Hébergement",
-    hostingText: "Les informations définitives concernant l’hébergeur et le traitement des données techniques d’accès seront ajoutées une fois la mise en place terminée.",
   },
 } as const;
 
@@ -185,16 +153,52 @@ export function LegalNoticePage({ locale }: { locale: Locale }) {
 }
 
 export function PrivacyPage({ locale }: { locale: Locale }) {
-  const copy = privacyCopy[locale];
+  const copy = privacyContent[locale];
+  const partner = company.generalPartner;
+  const sections: readonly PrivacySection[] = copy.sections;
 
   return (
     <section className="legal-page section">
       <div className="shell legal-content">
         <span className="eyebrow">{copy.eyebrow}</span>
         <h1>{copy.title}</h1>
-        <div className="draft-notice"><strong>{copy.noticeTitle}</strong><p>{copy.noticeText}</p></div>
-        <h2>{copy.statusTitle}</h2><p>{copy.statusText}</p>
-        <h2>{copy.hostingTitle}</h2><p>{copy.hostingText}</p>
+        <p className="legal-lead">{copy.lead}</p>
+        {copy.translationNote && (
+          <p className="legal-note">
+            {copy.translationNote} <Link href={siteRoutes.de.privacy} hrefLang="de" lang="de">Datenschutzerklärung (Deutsch)</Link>
+          </p>
+        )}
+
+        <div className="legal-grid">
+          <section className="legal-card legal-card-wide">
+            <h2>{copy.controllerTitle}</h2>
+            <p>{copy.controllerIntro}</p>
+            <address>
+              <strong>{company.name}</strong><br />
+              {copy.representedBy} {partner.name}, {copy.managingDirector}: {partner.managingDirectors.join(", ")}<br />
+              {company.street}, {company.postalCode} {company.city}, {copy.country}
+            </address>
+            <dl>
+              <div><dt>{copy.phone}</dt><dd><a href={company.phone.href}>{company.phone.display}</a></dd></div>
+              <div><dt>{copy.email}</dt><dd><a href={`mailto:${company.email}`}>{company.email}</a></dd></div>
+            </dl>
+          </section>
+        </div>
+
+        <div className="privacy-sections">
+          {sections.map((section) => (
+            <section key={section.title}>
+              <h2>{section.title}</h2>
+              {section.blocks.map((block, index) =>
+                typeof block === "string" ? <p key={index}>{block}</p>
+                : "list" in block ? <ul key={index}>{block.list.map((item) => <li key={item}>{item}</li>)}</ul>
+                : <p key={index} className="privacy-highlight">{block.highlight}</p>,
+              )}
+            </section>
+          ))}
+        </div>
+
+        <p className="legal-updated">{copy.updated}</p>
       </div>
     </section>
   );
