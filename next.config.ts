@@ -1,8 +1,25 @@
 import type { NextConfig } from "next";
+import { deviceSizes, imageSizes } from "./lib/image-widths.mjs";
 
 const nextConfig: NextConfig = {
   output: "standalone",
   poweredByHeader: false,
+  images: {
+    // Variants are pre-generated at build time (scripts/generate-images.mjs),
+    // so no image is resized on the server at request time.
+    loader: "custom",
+    loaderFile: "./lib/image-loader.ts",
+    deviceSizes,
+    imageSizes,
+  },
+  async headers() {
+    return [
+      {
+        source: "/images/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" }],
+      },
+    ];
+  },
   async redirects() {
     return [
       // Legacy URLs from the earlier German-first URL scheme.
