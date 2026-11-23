@@ -15,6 +15,7 @@ const copy = {
     privacy: "Privacy",
     location: "Location",
     place: "Melle, Germany",
+    salesTeam: "Sales Team",
     claim: "Collected regionally. Circulated internationally.",
   },
   de: {
@@ -28,6 +29,7 @@ const copy = {
     privacy: "Datenschutz",
     location: "Standort",
     place: "Melle, Deutschland",
+    salesTeam: "Sales Team",
     claim: "Regional erfasst. International im Kreislauf.",
   },
   fr: {
@@ -41,6 +43,7 @@ const copy = {
     privacy: "Confidentialité",
     location: "Site",
     place: "Melle, Allemagne",
+    salesTeam: "Équipe commerciale",
     claim: "Collectés localement. Remis en circulation dans le monde.",
   },
 } as const;
@@ -70,7 +73,7 @@ export function Footer({ locale }: { locale: Locale }) {
         <div>
           <p className="footer-heading">{content.location}</p>
           <p>{content.place}</p>
-          <a href="tel:+491714706260">Reinhold Thate</a>
+          <a href="tel:+491714706260">{content.salesTeam}</a>
           <a href="tel:+491714706260">+49 171 470 62 60</a>
         </div>
       </div>

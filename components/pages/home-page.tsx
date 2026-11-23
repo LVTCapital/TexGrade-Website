@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@/components/icon";
+import { Lines } from "@/components/lines";
 import type { Locale } from "@/lib/i18n";
 import { siteRoutes } from "@/lib/i18n";
 
@@ -14,7 +15,7 @@ const content = {
     factsLabel: "TexGrade at a glance",
     facts: [["7.5+ million kg", "Textiles sorted every year"], ["30+ years", "Experience in the market"], ["Worldwide", "Customers in Germany, Europe and beyond"]],
     audienceEyebrow: "For suppliers and buyers",
-    audienceTitle: "Two ways to work together. One reliable partner.",
+    audienceTitle: "Two ways to work together.\nOne reliable partner.",
     audienceIntro: "Whether you want to supply collected textiles or purchase finished assortments, we discuss your requirements directly and personally.",
     audiences: [
       { icon: "truck" as const, label: "For collectors and suppliers", title: "Offer unsorted textiles", text: "Do you collect used textiles and need a reliable buyer? TexGrade is your direct point of contact.", button: "Offer textiles" },
@@ -23,7 +24,7 @@ const content = {
     missionEyebrow: "Our mission",
     missionTitle: "Preserving the value of textiles.",
     missionText: "Our goal is to give well-preserved textiles a second life. Through careful manual sorting, we separate reusable clothing according to quality and intended use and return it to the goods cycle in a targeted manner. Textiles that are no longer suitable for reuse are sent for material recycling. In this way, we create reliable qualities for our partners and make a responsible contribution to conserving valuable resources.",
-    missionStatement: "Reuse responsibly. Recycle with foresight.",
+    missionStatement: "Reuse responsibly.\nRecycle with foresight.",
     flowEyebrow: "The textile flow",
     flowTitle: "From collection to a new use.",
     flowIntro: "A transparent process turns mixed textile streams into clearly defined goods and directs each material to the most suitable next stage.",
@@ -42,7 +43,8 @@ const content = {
     ],
     contactEyebrow: "Direct contact",
     contactTitle: "Would you like to supply textiles or purchase sorted goods?",
-    contactText: "Speak directly with Reinhold Thate about volumes, specifications and the next steps.",
+    contactName: "Sales Team",
+    contactText: "Speak directly with our sales team about volumes, specifications and the next steps.",
     callButton: "Call now",
     contactButton: "Contact details",
     heroImageAlt: "Sorted and packed textiles in the TexGrade warehouse in Melle",
@@ -59,7 +61,7 @@ const content = {
     factsLabel: "TexGrade auf einen Blick",
     facts: [["7,5+ Mio. kg", "Sortierte Textilien pro Jahr"], ["30+ Jahre", "Erfahrung im Markt"], ["Weltweit", "Kunden in Deutschland, Europa und darüber hinaus"]],
     audienceEyebrow: "Für Lieferanten und Abnehmer",
-    audienceTitle: "Zwei Wege zur Zusammenarbeit. Ein verlässlicher Partner.",
+    audienceTitle: "Zwei Wege zur Zusammenarbeit.\nEin verlässlicher Partner.",
     audienceIntro: "Ob Sie erfasste Alttextilien anbieten oder fertige Sortimente beziehen möchten: Wir stimmen die Anforderungen direkt und persönlich mit Ihnen ab.",
     audiences: [
       { icon: "truck" as const, label: "Für Sammler und Lieferanten", title: "Rohware anbieten", text: "Sie sammeln Alttextilien und suchen einen zuverlässigen Abnehmer? TexGrade ist Ihr direkter Ansprechpartner.", button: "Rohware anbieten" },
@@ -68,7 +70,7 @@ const content = {
     missionEyebrow: "Unsere Mission",
     missionTitle: "Den Wert von Textilien bewahren.",
     missionText: "Unser Ziel ist es, gut erhaltenen Textilien ein zweites Leben zu ermöglichen. Durch sorgfältige Handsortierung trennen wir wiederverwendbare Kleidung nach Qualität und Verwendungszweck und führen sie gezielt zurück in den Warenkreislauf. Textilien, die sich nicht mehr zur Wiederverwendung eignen, geben wir in die stoffliche Verwertung. So schaffen wir verlässliche Qualitäten für unsere Partner und leisten einen verantwortungsvollen Beitrag zur Schonung wertvoller Ressourcen.",
-    missionStatement: "Wiederverwenden mit Verantwortung. Recyceln mit Weitblick.",
+    missionStatement: "Wiederverwenden mit Verantwortung.\nRecyceln mit Weitblick.",
     flowEyebrow: "Der Textilstrom",
     flowTitle: "Von der Sammlung zur neuen Nutzung.",
     flowIntro: "Ein transparenter Prozess macht aus gemischten Textilströmen klar definierte Waren und führt jedes Material dem passenden nächsten Weg zu.",
@@ -87,12 +89,13 @@ const content = {
     ],
     contactEyebrow: "Direkter Kontakt",
     contactTitle: "Sie möchten Rohware anbieten oder sortierte Ware beziehen?",
-    contactText: "Sprechen Sie mit Reinhold Thate direkt über Mengen, Spezifikationen und die nächsten Schritte.",
+    contactName: "Sales Team",
+    contactText: "Sprechen Sie mit unserem Sales Team direkt über Mengen, Spezifikationen und die nächsten Schritte.",
     callButton: "Jetzt anrufen",
     contactButton: "Kontaktdaten",
     heroImageAlt: "Sortierte und verpackte Textilien im TexGrade-Lager in Melle",
     galleryEyebrow: "Einblick in TexGrade",
-    galleryTitle: "Wo Textilien ihr zweites Leben beginnen.",
+    galleryTitle: "Hier bekommen Textilien eine zweite Chance.",
     galleryAlts: ["Produktionshalle im TexGrade-Lager", "Gestapelte Textilballen für den Versand", "Verschnürter Ballen sortierter Textilien"],
   },
   fr: {
@@ -104,7 +107,7 @@ const content = {
     factsLabel: "TexGrade en bref",
     facts: [["7,5+ millions de kg", "Textiles triés chaque année"], ["30+ ans", "D’expérience sur le marché"], ["International", "Clients en Allemagne, en Europe et au-delà"]],
     audienceEyebrow: "Pour les fournisseurs et les acheteurs",
-    audienceTitle: "Deux façons de collaborer. Un partenaire fiable.",
+    audienceTitle: "Deux façons de collaborer.\nUn partenaire fiable.",
     audienceIntro: "Que vous souhaitiez proposer des textiles collectés ou acheter des assortiments triés, nous étudions directement vos besoins avec vous.",
     audiences: [
       { icon: "truck" as const, label: "Pour les collecteurs et fournisseurs", title: "Proposer des textiles bruts", text: "Vous collectez des textiles usagés et recherchez un acheteur fiable ? TexGrade est votre interlocuteur direct.", button: "Proposer des textiles" },
@@ -113,7 +116,7 @@ const content = {
     missionEyebrow: "Notre mission",
     missionTitle: "Préserver la valeur des textiles.",
     missionText: "Notre objectif est de donner une seconde vie aux textiles bien conservés. Grâce à un tri manuel minutieux, nous séparons les vêtements réutilisables selon leur qualité et leur usage et les réintroduisons de manière ciblée dans le circuit commercial. Les textiles qui ne sont plus adaptés à la réutilisation sont orientés vers la valorisation matière. Nous créons ainsi des qualités fiables pour nos partenaires tout en contribuant de manière responsable à la préservation de ressources précieuses.",
-    missionStatement: "Réutiliser de manière responsable. Recycler avec discernement.",
+    missionStatement: "Réutiliser de manière responsable.\nRecycler avec discernement.",
     flowEyebrow: "Le flux textile",
     flowTitle: "De la collecte à une nouvelle utilisation.",
     flowIntro: "Un processus transparent transforme des flux textiles mixtes en marchandises clairement définies et oriente chaque matière vers la solution la plus adaptée.",
@@ -132,7 +135,8 @@ const content = {
     ],
     contactEyebrow: "Contact direct",
     contactTitle: "Vous souhaitez proposer des textiles ou acheter des produits triés ?",
-    contactText: "Échangez directement avec Reinhold Thate au sujet des volumes, des spécifications et des prochaines étapes.",
+    contactName: "Équipe commerciale",
+    contactText: "Échangez directement avec notre équipe commerciale au sujet des volumes, des spécifications et des prochaines étapes.",
     callButton: "Appeler maintenant",
     contactButton: "Coordonnées",
     heroImageAlt: "Textiles triés et emballés dans l’entrepôt TexGrade à Melle",
@@ -174,7 +178,7 @@ export function HomePage({ locale }: { locale: Locale }) {
       <section className="section audience-section">
         <div className="shell">
           <div className="section-heading split-heading reveal">
-            <div><span className="eyebrow">{copy.audienceEyebrow}</span><h2>{copy.audienceTitle}</h2></div>
+            <div><span className="eyebrow">{copy.audienceEyebrow}</span><h2><Lines text={copy.audienceTitle} /></h2></div>
             <p>{copy.audienceIntro}</p>
           </div>
           <div className="audience-paths reveal">
@@ -207,7 +211,7 @@ export function HomePage({ locale }: { locale: Locale }) {
       <section className="section mission-section">
         <div className="shell mission-grid reveal">
           <div><span className="eyebrow light">{copy.missionEyebrow}</span><h2>{copy.missionTitle}</h2></div>
-          <div className="mission-copy"><p>{copy.missionText}</p><strong>{copy.missionStatement}</strong></div>
+          <div className="mission-copy"><p>{copy.missionText}</p><strong><Lines text={copy.missionStatement} /></strong></div>
         </div>
       </section>
 
@@ -245,7 +249,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         <div className="shell contact-cta-grid">
           <div><span className="eyebrow light">{copy.contactEyebrow}</span><h2>{copy.contactTitle}</h2><p>{copy.contactText}</p></div>
           <div className="contact-person-cta">
-            <span>Reinhold Thate</span>
+            <span>{copy.contactName}</span>
             <a href="tel:+491714706260">+49 171 470 62 60</a>
             <div>
               <a className="button light-button" href="tel:+491714706260">{copy.callButton}</a>

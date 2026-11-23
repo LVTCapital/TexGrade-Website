@@ -5,7 +5,7 @@ import { WarehouseCarousel } from "@/components/warehouse-carousel";
 const content = {
   de: {
     eyebrow: "Unternehmen",
-    title: "Gewachsene Erfahrung. Klarer Blick nach vorn.",
+    title: "Gewachsene Erfahrung.\nKlarer Blick nach vorn.",
     intro: "In TexGrade bündeln sich über 30 Jahre Branchenkenntnis in einem Unternehmen, das nationale und internationale Märkte verbindet und auf persönliche Zusammenarbeit sowie langfristige Partnerschaften setzt.",
     storyEyebrow: "Wer wir sind",
     storyTitle: "Wir kennen das Geschäft – und die Menschen dahinter.",
@@ -28,7 +28,7 @@ const content = {
   },
   en: {
     eyebrow: "Company",
-    title: "Experience built over time. A clear view ahead.",
+    title: "Experience built over time.\nA clear view ahead.",
     intro: "TexGrade brings together more than 30 years of industry expertise in a company that connects national and international markets and is committed to personal cooperation and long-term partnerships.",
     storyEyebrow: "Who we are",
     storyTitle: "We know the business – and the people behind it.",
@@ -51,7 +51,7 @@ const content = {
   },
   fr: {
     eyebrow: "Entreprise",
-    title: "Une expérience solide. Une vision claire de l’avenir.",
+    title: "Une expérience solide.\nUne vision claire de l’avenir.",
     intro: "TexGrade réunit plus de 30 ans d’expertise sectorielle au sein d’une entreprise qui relie les marchés nationaux et internationaux et mise sur une collaboration personnelle ainsi que sur des partenariats à long terme.",
     storyEyebrow: "Qui sommes-nous",
     storyTitle: "Nous connaissons le métier – et les personnes qui le font vivre.",

@@ -7,12 +7,12 @@ const content = {
     eyebrow: "Kontakt",
     title: "Ihre Anlaufstelle für Einkauf und Lieferung.",
     intro: "Ob Sie sortierte Secondhand-Textilien beziehen oder regional erfasste Altkleider anliefern möchten: Sprechen Sie uns direkt an.",
-    personEyebrow: "Ihr Ansprechpartner",
-    role: "Geschäftsführer · TexGrade GmbH & Co. KG",
+    personEyebrow: "Ihr Kontakt",
+    contactName: "Sales Team",
     email: "E-Mail",
     location: "Standort",
     country: "Deutschland",
-    call: "Reinhold Thate anrufen",
+    call: "Sales Team anrufen",
     customer: "Für Kunden",
     customerTitle: "Sortierte Ware beziehen",
     customerText: "Wir sprechen mit Ihnen über Zielmarkt, gewünschte Artikelkategorien, Qualität, Saison und geplante Mengen.",
@@ -26,11 +26,11 @@ const content = {
     title: "Your point of contact for purchasing and supply.",
     intro: "Whether you want to purchase sorted second-hand textiles or supply regionally collected used textiles, contact us directly.",
     personEyebrow: "Your contact",
-    role: "Managing Director · TexGrade GmbH & Co. KG",
+    contactName: "Sales Team",
     email: "Email",
     location: "Location",
     country: "Germany",
-    call: "Call Reinhold Thate",
+    call: "Call our sales team",
     customer: "For customers",
     customerTitle: "Purchase sorted goods",
     customerText: "We discuss your target market, required article categories, quality, season and planned volumes.",
@@ -43,12 +43,12 @@ const content = {
     eyebrow: "Contact",
     title: "Votre interlocuteur pour l’achat et la fourniture.",
     intro: "Que vous souhaitiez acheter des textiles de seconde main triés ou proposer des textiles usagés collectés dans la région, contactez-nous directement.",
-    personEyebrow: "Votre interlocuteur",
-    role: "Gérant · TexGrade GmbH & Co. KG",
+    personEyebrow: "Votre contact",
+    contactName: "Équipe commerciale",
     email: "E-mail",
     location: "Site",
     country: "Allemagne",
-    call: "Appeler Reinhold Thate",
+    call: "Appeler notre équipe commerciale",
     customer: "Pour les clients",
     customerTitle: "Acheter des produits triés",
     customerText: "Nous échangeons avec vous sur le marché cible, les catégories d’articles, la qualité, la saison et les volumes prévus.",
@@ -69,8 +69,8 @@ export function ContactPage({ locale }: { locale: Locale }) {
         <div className="shell contact-grid">
           <div className="contact-details">
             <span className="eyebrow">{copy.personEyebrow}</span>
-            <h2>Reinhold Thate</h2>
-            <p className="contact-role">{copy.role}</p>
+            <h2>{copy.contactName}</h2>
+            <p className="contact-role">TexGrade GmbH &amp; Co. KG</p>
             <a className="contact-phone" href="tel:+491714706260">+49 171 470 62 60</a>
             <div className="contact-block"><span>{copy.email}</span><p><a href="mailto:info@texgrade.com">info@texgrade.com</a></p></div>
             <div className="contact-block"><span>{copy.location}</span><p>Bismarckstraße 30<br />49324 Melle<br />{copy.country}</p></div>

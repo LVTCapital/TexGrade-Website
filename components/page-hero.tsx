@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Lines } from "@/components/lines";
 
 type PageHeroProps = {
   eyebrow: string;
@@ -23,7 +24,7 @@ export function PageHero({ eyebrow, title, intro, image }: PageHeroProps) {
       )}
       <div className="shell page-hero-inner">
         <span className={image ? "eyebrow light" : "eyebrow"}>{eyebrow}</span>
-        <h1>{title}</h1>
+        <h1><Lines text={title} /></h1>
         <p>{intro}</p>
       </div>
     </section>
